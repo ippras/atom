@@ -1,0 +1,8 @@
+[package]
+edition = "2021"
+name = "atom"
+version = "0.0.1"
+
+[dependencies]
+serde = { version = "1.0.164", features = ["derive"] }
+thiserror = "1.0.40"
