@@ -1,13 +1,21 @@
+#![feature(decl_macro)]
 #![feature(const_fn_floating_point_arithmetic)]
 
+#[cfg(feature = "nist")]
+pub use self::isotope::Isotope;
 pub use self::{
-    atom::{Atom, ABRIDGED, ATOMS, UNABRIDGED},
+    element::{Element, ELEMENTS},
     error::{Error, Result},
+    uncertain::{uncertain, Uncertain},
 };
 
-pub const PERIODS: usize = 7;
+#[cfg(feature = "nist")]
+pub mod isotopes;
 
-pub const GROUPS: usize = 18;
-
-mod atom;
+mod element;
 mod error;
+#[cfg(feature = "nist")]
+mod isotope;
+mod periodic_table;
+mod standard_atomic_weight;
+mod uncertain;

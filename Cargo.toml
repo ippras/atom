@@ -1,8 +1,18 @@
 [package]
 edition = "2021"
 name = "atom"
-version = "0.0.1"
+version = "0.0.2"
 
 [dependencies]
-serde = { version = "1.0.164", features = ["derive"] }
-thiserror = "1.0.40"
+derive_more = { version = "1.0.0-beta.3", dafault-features = false, features = [
+    "from",
+] }
+serde = { version = "1.0.188", features = ["derive"], optional = true }
+strum = { version = "0.25.0", features = ["derive"] }
+thiserror = "1.0.49"
+indexmap = "2.0.2"
+
+[features]
+default = ["nist"]
+nist = []
+iupac = []
