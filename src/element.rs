@@ -1,4 +1,10 @@
-use self::Element::*;
+use self::Element::{
+    Ac, Ag, Al, Am, Ar, As, At, Au, Ba, Be, Bh, Bi, Bk, Br, Ca, Cd, Ce, Cf, Cl, Cm, Cn, Co, Cr, Cs,
+    Cu, Db, Ds, Dy, Er, Es, Eu, Fe, Fl, Fm, Fr, Ga, Gd, Ge, He, Hf, Hg, Ho, Hs, In, Ir, Kr, La, Li,
+    Lr, Lu, Lv, Mc, Md, Mg, Mn, Mo, Mt, Na, Nb, Nd, Ne, Nh, Ni, No, Np, Og, Os, Pa, Pb, Pd, Pm, Po,
+    Pr, Pt, Pu, Ra, Rb, Re, Rf, Rg, Rh, Rn, Ru, Sb, Sc, Se, Sg, Si, Sm, Sn, Sr, Ta, Tb, Tc, Te, Th,
+    Ti, Tl, Tm, Ts, Xe, Yb, Zn, Zr, B, C, F, H, I, K, N, O, P, S, U, V, W, Y,
+};
 use crate::{Error, Result};
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
@@ -143,11 +149,13 @@ pub enum Element {
 
 impl Element {
     /// Atomic number
+    #[must_use]
     pub const fn atomic_number(&self) -> usize {
         *self as usize
     }
 
     /// Name
+    #[must_use]
     pub const fn name(&self) -> &'static str {
         match self {
             H => "Hydrogen",
@@ -272,6 +280,7 @@ impl Element {
     }
 
     /// Symbol
+    #[must_use]
     pub const fn symbol(&self) -> &'static str {
         match self {
             H => "H",
@@ -397,6 +406,7 @@ impl Element {
 }
 
 impl Element {
+    #[must_use]
     pub fn split(&self) -> (&[Self], &[Self]) {
         let split = ELEMENTS.split_at(*self as _);
         (split.0, &split.1[1..])

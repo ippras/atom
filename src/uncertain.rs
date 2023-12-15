@@ -23,7 +23,7 @@ pub macro uncertain {
 }
 
 /// Uncertain
-#[derive(Clone, Copy, Debug, Default, PartialEq, PartialOrd)]
+#[derive(Clone, Copy, Debug, Default, PartialEq)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Uncertain {
     pub value: f64,
@@ -31,14 +31,17 @@ pub struct Uncertain {
 }
 
 impl Uncertain {
+    #[must_use]
     pub const fn new(value: f64, uncertainty: f64) -> Self {
         Self { value, uncertainty }
     }
 
+    #[must_use]
     pub const fn start(&self) -> f64 {
         self.value - self.uncertainty
     }
 
+    #[must_use]
     pub const fn end(&self) -> f64 {
         self.value + self.uncertainty
     }
@@ -123,6 +126,13 @@ impl Mul<f64> for Uncertain {
 impl Ord for Uncertain {
     fn cmp(&self, other: &Self) -> Ordering {
         self.value.total_cmp(&other.value)
+    }
+}
+
+impl PartialOrd for Uncertain {
+    #[inline]
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.cmp(other))
     }
 }
 

@@ -1,4 +1,13 @@
-use crate::{Element, Element::*};
+use crate::{
+    Element,
+    Element::{
+        Ac, Ag, Al, Am, Ar, As, At, Au, Ba, Be, Bh, Bi, Bk, Br, Ca, Cd, Ce, Cf, Cl, Cm, Cn, Co, Cr,
+        Cs, Cu, Db, Ds, Dy, Er, Es, Eu, Fe, Fl, Fm, Fr, Ga, Gd, Ge, He, Hf, Hg, Ho, Hs, In, Ir, Kr,
+        La, Li, Lr, Lu, Lv, Mc, Md, Mg, Mn, Mo, Mt, Na, Nb, Nd, Ne, Nh, Ni, No, Np, Og, Os, Pa, Pb,
+        Pd, Pm, Po, Pr, Pt, Pu, Ra, Rb, Re, Rf, Rg, Rh, Rn, Ru, Sb, Sc, Se, Sg, Si, Sm, Sn, Sr, Ta,
+        Tb, Tc, Te, Th, Ti, Tl, Tm, Ts, Xe, Yb, Zn, Zr, B, C, F, H, I, K, N, O, P, S, U, V, W, Y,
+    },
+};
 
 pub const PERIODS: usize = 7;
 
@@ -50,6 +59,7 @@ pub const LEFT_STEP_PERIODIC_TABLE: [[Option<Element>; 32]; 8] = [
 // 2, 2, 8, 8, 18, 18, 32, 32.
 
 impl Element {
+    #[must_use]
     pub const fn group(&self) -> usize {
         match self {
             H | Li | Na | K | Rb | Cs | Fr => 1,
@@ -74,6 +84,7 @@ impl Element {
         }
     }
 
+    #[must_use]
     pub const fn period(&self) -> usize {
         match self {
             H | He => 1,
@@ -90,6 +101,7 @@ impl Element {
         }
     }
 
+    #[must_use]
     pub const fn valency(&self) -> &[usize] {
         match self {
             H => &[1],

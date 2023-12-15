@@ -1,4 +1,7 @@
-use self::Isotope::*;
+use self::Isotope::{
+    Ac, Al, As, Au, Be, Bh, Bi, Cn, Co, Cs, Db, Ds, Es, Fl, Fm, Fr, Ho, Hs, Lr, Lv, Mc, Mn, Mt, Na,
+    Nb, Nh, No, Og, Pa, Pr, Rf, Rg, Rh, Sc, Sg, Tb, Tm, Ts, F, I, P, Y,
+};
 use crate::{
     isotopes::{
         Ag, Am, Ar, At, Ba, Bk, Br, Ca, Cd, Ce, Cf, Cl, Cm, Cr, Cu, Dy, Er, Eu, Fe, Ga, Gd, Ge, He,
@@ -140,6 +143,7 @@ pub enum Isotope {
 
 impl Isotope {
     /// Element
+    #[must_use]
     pub const fn element(&self) -> Element {
         match self {
             H(_) => Element::H,
@@ -264,6 +268,7 @@ impl Isotope {
     }
 
     /// Composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             H(h) => h.isotopic_composition(),
@@ -388,6 +393,7 @@ impl Isotope {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             H(h) => h.mass_number(),
@@ -512,53 +518,54 @@ impl Isotope {
     }
 
     /// Relative atomic mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
             H(h) => h.relative_atomic_mass(),
             He(he) => he.relative_atomic_mass(),
             Li(li) => li.relative_atomic_mass(),
-            Be => uncertain!(9.012183065, 0.000000082),
+            Be => uncertain!(9.012_183_065, 0.000_000_082),
             B(b) => b.relative_atomic_mass(),
             C(c) => c.relative_atomic_mass(),
             N(n) => n.relative_atomic_mass(),
             O(o) => o.relative_atomic_mass(),
-            F => uncertain!(18.99840316273, 0.00000000092),
+            F => uncertain!(18.998_403_162_73, 0.000_000_000_92),
             Ne(ne) => ne.relative_atomic_mass(),
-            Na => uncertain!(22.9897692820, 0.0000000019),
+            Na => uncertain!(22.989_769_282_0, 0.000_000_001_9),
             Mg(mg) => mg.relative_atomic_mass(),
-            Al => uncertain!(26.98153853, 0.00000011),
+            Al => uncertain!(26.981_538_53, 0.000_000_11),
             Si(si) => si.relative_atomic_mass(),
-            P => uncertain!(30.97376199842, 0.00000000070),
+            P => uncertain!(30.973_761_998_42, 0.000_000_000_70),
             S(s) => s.relative_atomic_mass(),
             Cl(cl) => cl.relative_atomic_mass(),
             Ar(ar) => ar.relative_atomic_mass(),
             K(k) => k.relative_atomic_mass(),
             Ca(ca) => ca.relative_atomic_mass(),
-            Sc => uncertain!(44.95590828, 0.00000077),
+            Sc => uncertain!(44.955_908_28, 0.000_000_77),
             Ti(ti) => ti.relative_atomic_mass(),
             V(v) => v.relative_atomic_mass(),
             Cr(cr) => cr.relative_atomic_mass(),
-            Mn => uncertain!(54.93804391, 0.00000048),
+            Mn => uncertain!(54.938_043_91, 0.000_000_48),
             Fe(fe) => fe.relative_atomic_mass(),
-            Co => uncertain!(58.93319429, 0.00000056),
+            Co => uncertain!(58.933_194_29, 0.000_000_56),
             Ni(ni) => ni.relative_atomic_mass(),
             Cu(cu) => cu.relative_atomic_mass(),
             Zn(zn) => zn.relative_atomic_mass(),
             Ga(ga) => ga.relative_atomic_mass(),
             Ge(ge) => ge.relative_atomic_mass(),
-            As => uncertain!(74.92159457, 0.00000095),
+            As => uncertain!(74.921_594_57, 0.000_000_95),
             Se(se) => se.relative_atomic_mass(),
             Br(br) => br.relative_atomic_mass(),
             Kr(kr) => kr.relative_atomic_mass(),
             Rb(rb) => rb.relative_atomic_mass(),
             Sr(sr) => sr.relative_atomic_mass(),
-            Y => uncertain!(88.9058403, 0.0000024),
+            Y => uncertain!(88.905_840_3, 0.000_002_4),
             Zr(zr) => zr.relative_atomic_mass(),
-            Nb => uncertain!(92.9063730, 0.0000020),
+            Nb => uncertain!(92.906_373_0, 0.000_002_0),
             Mo(mo) => mo.relative_atomic_mass(),
             Tc(tc) => tc.relative_atomic_mass(),
             Ru(ru) => ru.relative_atomic_mass(),
-            Rh => uncertain!(102.9054980, 0.0000026),
+            Rh => uncertain!(102.905_498_0, 0.000_002_6),
             Pd(pd) => pd.relative_atomic_mass(),
             Ag(ag) => ag.relative_atomic_mass(),
             Cd(cd) => cd.relative_atomic_mass(),
@@ -566,23 +573,23 @@ impl Isotope {
             Sn(sn) => sn.relative_atomic_mass(),
             Sb(sb) => sb.relative_atomic_mass(),
             Te(te) => te.relative_atomic_mass(),
-            I => uncertain!(126.9044719, 0.0000039),
+            I => uncertain!(126.904_471_9, 0.000_003_9),
             Xe(xe) => xe.relative_atomic_mass(),
-            Cs => uncertain!(132.9054519610, 0.0000000080),
+            Cs => uncertain!(132.905_451_961_0, 0.000_000_008_0),
             Ba(ba) => ba.relative_atomic_mass(),
             La(la) => la.relative_atomic_mass(),
             Ce(ce) => ce.relative_atomic_mass(),
-            Pr => uncertain!(140.9076576, 0.0000023),
+            Pr => uncertain!(140.907_657_6, 0.000_002_3),
             Nd(nd) => nd.relative_atomic_mass(),
             Pm(pm) => pm.relative_atomic_mass(),
             Sm(sm) => sm.relative_atomic_mass(),
             Eu(eu) => eu.relative_atomic_mass(),
             Gd(gd) => gd.relative_atomic_mass(),
-            Tb => uncertain!(158.9253547, 0.0000019),
+            Tb => uncertain!(158.925_354_7, 0.000_001_9),
             Dy(dy) => dy.relative_atomic_mass(),
-            Ho => uncertain!(164.9303288, 0.0000021),
+            Ho => uncertain!(164.930_328_8, 0.000_002_1),
             Er(er) => er.relative_atomic_mass(),
-            Tm => uncertain!(168.9342179, 0.0000022),
+            Tm => uncertain!(168.934_217_9, 0.000_002_2),
             Yb(yb) => yb.relative_atomic_mass(),
             Lu(lu) => lu.relative_atomic_mass(),
             Hf(hf) => hf.relative_atomic_mass(),
@@ -592,19 +599,19 @@ impl Isotope {
             Os(os) => os.relative_atomic_mass(),
             Ir(ir) => ir.relative_atomic_mass(),
             Pt(pt) => pt.relative_atomic_mass(),
-            Au => uncertain!(196.96656879, 0.00000071),
+            Au => uncertain!(196.966_568_79, 0.000_000_71),
             Hg(hg) => hg.relative_atomic_mass(),
             Tl(tl) => tl.relative_atomic_mass(),
             Pb(pb) => pb.relative_atomic_mass(),
-            Bi => uncertain!(208.9803991, 0.0000016),
+            Bi => uncertain!(208.980_399_1, 0.000_001_6),
             Po(po) => po.relative_atomic_mass(),
             At(at) => at.relative_atomic_mass(),
             Rn(rn) => rn.relative_atomic_mass(),
-            Fr => uncertain!(223.0197360, 0.0000025),
+            Fr => uncertain!(223.019_736_0, 0.000_002_5),
             Ra(ra) => ra.relative_atomic_mass(),
-            Ac => uncertain!(227.0277523, 0.0000025),
+            Ac => uncertain!(227.027_752_3, 0.000_002_5),
             Th(th) => th.relative_atomic_mass(),
-            Pa => uncertain!(231.0358842, 0.0000024),
+            Pa => uncertain!(231.035_884_2, 0.000_002_4),
             U(u) => u.relative_atomic_mass(),
             Np(np) => np.relative_atomic_mass(),
             Pu(pu) => pu.relative_atomic_mass(),
@@ -612,8 +619,8 @@ impl Isotope {
             Cm(cm) => cm.relative_atomic_mass(),
             Bk(bk) => bk.relative_atomic_mass(),
             Cf(cf) => cf.relative_atomic_mass(),
-            Es => uncertain!(252.082980, 0.000054),
-            Fm => uncertain!(257.0951061, 0.0000069),
+            Es => uncertain!(252.082_980, 0.000_054),
+            Fm => uncertain!(257.095_106_1, 0.000_006_9),
             Md(md) => md.relative_atomic_mass(),
             No => uncertain!(259.10103, 0.00011),
             Lr => uncertain!(262.10961, 0.00022),
@@ -636,6 +643,7 @@ impl Isotope {
     }
 
     /// Symbol
+    #[must_use]
     pub const fn symbol(&self) -> &'static str {
         match self {
             H(H::Two) => "D",

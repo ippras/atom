@@ -16,15 +16,17 @@ pub enum H {
 
 impl H {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::One => Some(uncertain!(0.999885, 0.000070)),
-            Self::Two => Some(uncertain!(0.000115, 0.000070)),
+            Self::One => Some(uncertain!(0.999_885, 0.000_070)),
+            Self::Two => Some(uncertain!(0.000_115, 0.000_070)),
             Self::Three => None,
         }
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::One => 1,
@@ -34,11 +36,12 @@ impl H {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::One => uncertain!(1.00782503223, 0.00000000009),
-            Self::Two => uncertain!(2.01410177812, 0.00000000012),
-            Self::Three => uncertain!(3.0160492779, 0.0000000024),
+            Self::One => uncertain!(1.007_825_032_23, 0.000_000_000_09),
+            Self::Two => uncertain!(2.014_101_778_12, 0.000_000_000_12),
+            Self::Three => uncertain!(3.016_049_277_9, 0.000_000_002_4),
         }
     }
 }
@@ -53,14 +56,16 @@ pub enum He {
 
 impl He {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::Three => Some(uncertain!(0.00000134, 0.00000003)),
-            Self::Four => Some(uncertain!(0.99999866, 0.00000003)),
+            Self::Three => Some(uncertain!(0.000_001_34, 0.000_000_03)),
+            Self::Four => Some(uncertain!(0.999_998_66, 0.000_000_03)),
         }
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::Three => 3,
@@ -69,10 +74,11 @@ impl He {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::Three => uncertain!(3.0160293201, 0.0000000025),
-            Self::Four => uncertain!(4.00260325413, 0.00000000006),
+            Self::Three => uncertain!(3.016_029_320_1, 0.000_000_002_5),
+            Self::Four => uncertain!(4.002_603_254_13, 0.000_000_000_06),
         }
     }
 }
@@ -87,6 +93,7 @@ pub enum Li {
 
 impl Li {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::Six => Some(uncertain!(0.0759, 0.0004)),
@@ -95,6 +102,7 @@ impl Li {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::Six => 6,
@@ -103,10 +111,11 @@ impl Li {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::Six => uncertain!(6.0151228874, 0.0000000016),
-            Self::Seven => uncertain!(7.0160034366, 0.0000000045),
+            Self::Six => uncertain!(6.015_122_887_4, 0.000_000_001_6),
+            Self::Seven => uncertain!(7.016_003_436_6, 0.000_000_004_5),
         }
     }
 }
@@ -121,6 +130,7 @@ pub enum B {
 
 impl B {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::Ten => Some(uncertain!(0.199, 0.007)),
@@ -129,6 +139,7 @@ impl B {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::Ten => 10,
@@ -137,10 +148,11 @@ impl B {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::Ten => uncertain!(10.01293695, 0.00000041),
-            Self::Eleven => uncertain!(11.00930536, 0.00000045),
+            Self::Ten => uncertain!(10.012_936_95, 0.000_000_41),
+            Self::Eleven => uncertain!(11.009_305_36, 0.000_000_45),
         }
     }
 }
@@ -156,6 +168,7 @@ pub enum C {
 
 impl C {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::Twelve => Some(uncertain!(0.9893, 0.0008)),
@@ -165,6 +178,7 @@ impl C {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::Twelve => 12,
@@ -174,11 +188,12 @@ impl C {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::Twelve => uncertain!(12.0000000, 0.0000000),
-            Self::Thirteen => uncertain!(13.00335483507, 0.00000000023),
-            Self::Fourteen => uncertain!(14.0032419884, 0.0000000040),
+            Self::Twelve => uncertain!(12.000_000_0, 0.000_000_0),
+            Self::Thirteen => uncertain!(13.003_354_835_07, 0.000_000_000_23),
+            Self::Fourteen => uncertain!(14.003_241_988_4, 0.000_000_004_0),
         }
     }
 }
@@ -193,6 +208,7 @@ pub enum N {
 
 impl N {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::Fourteen => Some(uncertain!(0.99636, 0.00020)),
@@ -201,6 +217,7 @@ impl N {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::Fourteen => 14,
@@ -209,10 +226,11 @@ impl N {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::Fourteen => uncertain!(14.00307400443, 0.00000000020),
-            Self::Fifteen => uncertain!(15.00010889888, 0.00000000064),
+            Self::Fourteen => uncertain!(14.003_074_004_43, 0.000_000_000_20),
+            Self::Fifteen => uncertain!(15.000_108_898_88, 0.000_000_000_64),
         }
     }
 }
@@ -228,6 +246,7 @@ pub enum O {
 
 impl O {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::Sixteen => Some(uncertain!(0.99757, 0.00016)),
@@ -237,6 +256,7 @@ impl O {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::Sixteen => 16,
@@ -246,11 +266,12 @@ impl O {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::Sixteen => uncertain!(15.99491461957, 0.00000000017),
-            Self::Seventeen => uncertain!(16.99913175650, 0.00000000069),
-            Self::Eighteen => uncertain!(17.99915961286, 0.00000000076),
+            Self::Sixteen => uncertain!(15.994_914_619_57, 0.000_000_000_17),
+            Self::Seventeen => uncertain!(16.999_131_756_50, 0.000_000_000_69),
+            Self::Eighteen => uncertain!(17.999_159_612_86, 0.000_000_000_76),
         }
     }
 }
@@ -266,6 +287,7 @@ pub enum Ne {
 
 impl Ne {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::Twenty => Some(uncertain!(0.9048, 0.0003)),
@@ -275,6 +297,7 @@ impl Ne {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::Twenty => 20,
@@ -284,11 +307,12 @@ impl Ne {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::Twenty => uncertain!(19.9924401762, 0.0000000017),
-            Self::TwentyOne => uncertain!(20.993846685, 0.000000041),
-            Self::TwentyTwo => uncertain!(21.991385114, 0.000000018),
+            Self::Twenty => uncertain!(19.992_440_176_2, 0.000_000_001_7),
+            Self::TwentyOne => uncertain!(20.993_846_685, 0.000_000_041),
+            Self::TwentyTwo => uncertain!(21.991_385_114, 0.000_000_018),
         }
     }
 }
@@ -304,6 +328,7 @@ pub enum Mg {
 
 impl Mg {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwentyFour => Some(uncertain!(0.7899, 0.0004)),
@@ -313,6 +338,7 @@ impl Mg {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwentyFour => 24,
@@ -322,11 +348,12 @@ impl Mg {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwentyFour => uncertain!(23.985041697, 0.000000014),
-            Self::TwentyFive => uncertain!(24.985836976, 0.000000050),
-            Self::TwentySix => uncertain!(25.982592968, 0.000000031),
+            Self::TwentyFour => uncertain!(23.985_041_697, 0.000_000_014),
+            Self::TwentyFive => uncertain!(24.985_836_976, 0.000_000_050),
+            Self::TwentySix => uncertain!(25.982_592_968, 0.000_000_031),
         }
     }
 }
@@ -342,6 +369,7 @@ pub enum Si {
 
 impl Si {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwentyEight => Some(uncertain!(0.92223, 0.00019)),
@@ -351,6 +379,7 @@ impl Si {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwentyEight => 28,
@@ -360,11 +389,12 @@ impl Si {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwentyEight => uncertain!(27.97692653465, 0.00000000044),
-            Self::TwentyNine => uncertain!(28.97649466490, 0.00000000052),
-            Self::Thirty => uncertain!(29.973770136, 0.000000023),
+            Self::TwentyEight => uncertain!(27.976_926_534_65, 0.000_000_000_44),
+            Self::TwentyNine => uncertain!(28.976_494_664_90, 0.000_000_000_52),
+            Self::Thirty => uncertain!(29.973_770_136, 0.000_000_023),
         }
     }
 }
@@ -381,6 +411,7 @@ pub enum S {
 
 impl S {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::ThirtyTwo => Some(uncertain!(0.9499, 0.0026)),
@@ -391,6 +422,7 @@ impl S {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::ThirtyTwo => 32,
@@ -401,12 +433,13 @@ impl S {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::ThirtyTwo => uncertain!(31.9720711744, 0.0000000014),
-            Self::ThirtyThree => uncertain!(32.9714589098, 0.0000000015),
-            Self::ThirtyFour => uncertain!(33.967867004, 0.000000047),
-            Self::ThirtySix => uncertain!(35.96708071, 0.00000020),
+            Self::ThirtyTwo => uncertain!(31.972_071_174_4, 0.000_000_001_4),
+            Self::ThirtyThree => uncertain!(32.971_458_909_8, 0.000_000_001_5),
+            Self::ThirtyFour => uncertain!(33.967_867_004, 0.000_000_047),
+            Self::ThirtySix => uncertain!(35.967_080_71, 0.000_000_20),
         }
     }
 }
@@ -421,6 +454,7 @@ pub enum Cl {
 
 impl Cl {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::ThirtyFive => Some(uncertain!(0.7576, 0.0010)),
@@ -429,6 +463,7 @@ impl Cl {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::ThirtyFive => 35,
@@ -437,10 +472,11 @@ impl Cl {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::ThirtyFive => uncertain!(34.968852682, 0.000000037),
-            Self::ThirtySeven => uncertain!(36.965902602, 0.000000055),
+            Self::ThirtyFive => uncertain!(34.968_852_682, 0.000_000_037),
+            Self::ThirtySeven => uncertain!(36.965_902_602, 0.000_000_055),
         }
     }
 }
@@ -456,15 +492,17 @@ pub enum Ar {
 
 impl Ar {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::ThirtySix => Some(uncertain!(0.003336, 0.000021)),
-            Self::ThirtyEight => Some(uncertain!(0.000629, 0.000007)),
-            Self::Forty => Some(uncertain!(0.996035, 0.000025)),
+            Self::ThirtySix => Some(uncertain!(0.003_336, 0.000_021)),
+            Self::ThirtyEight => Some(uncertain!(0.000_629, 0.000_007)),
+            Self::Forty => Some(uncertain!(0.996_035, 0.000_025)),
         }
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::ThirtySix => 36,
@@ -474,11 +512,12 @@ impl Ar {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::ThirtySix => uncertain!(35.967545105, 0.000000028),
-            Self::ThirtyEight => uncertain!(37.96273211, 0.00000021),
-            Self::Forty => uncertain!(39.9623831237, 0.0000000024),
+            Self::ThirtySix => uncertain!(35.967_545_105, 0.000_000_028),
+            Self::ThirtyEight => uncertain!(37.962_732_11, 0.000_000_21),
+            Self::Forty => uncertain!(39.962_383_123_7, 0.000_000_002_4),
         }
     }
 }
@@ -494,15 +533,17 @@ pub enum K {
 
 impl K {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::ThirtyNine => Some(uncertain!(0.932581, 0.000044)),
-            Self::Forty => Some(uncertain!(0.000117, 0.000001)),
-            Self::FortyOne => Some(uncertain!(0.067302, 0.000044)),
+            Self::ThirtyNine => Some(uncertain!(0.932_581, 0.000_044)),
+            Self::Forty => Some(uncertain!(0.000_117, 0.000_001)),
+            Self::FortyOne => Some(uncertain!(0.067_302, 0.000_044)),
         }
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::ThirtyNine => 39,
@@ -512,11 +553,12 @@ impl K {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::ThirtyNine => uncertain!(38.9637064864, 0.0000000049),
-            Self::Forty => uncertain!(39.963998166, 0.000000060),
-            Self::FortyOne => uncertain!(40.9618252579, 0.0000000041),
+            Self::ThirtyNine => uncertain!(38.963_706_486_4, 0.000_000_004_9),
+            Self::Forty => uncertain!(39.963_998_166, 0.000_000_060),
+            Self::FortyOne => uncertain!(40.961_825_257_9, 0.000_000_004_1),
         }
     }
 }
@@ -535,6 +577,7 @@ pub enum Ca {
 
 impl Ca {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::Forty => Some(uncertain!(0.96941, 0.00156)),
@@ -547,6 +590,7 @@ impl Ca {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::Forty => 40,
@@ -559,14 +603,15 @@ impl Ca {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::Forty => uncertain!(39.962590863, 0.000000022),
-            Self::FortyTwo => uncertain!(41.95861783, 0.00000016),
-            Self::FortyThree => uncertain!(42.95876644, 0.00000024),
-            Self::FortyFour => uncertain!(43.95548156, 0.00000035),
-            Self::FortySix => uncertain!(45.9536890, 0.0000024),
-            Self::FortyEight => uncertain!(47.95252276, 0.00000013),
+            Self::Forty => uncertain!(39.962_590_863, 0.000_000_022),
+            Self::FortyTwo => uncertain!(41.958_617_83, 0.000_000_16),
+            Self::FortyThree => uncertain!(42.958_766_44, 0.000_000_24),
+            Self::FortyFour => uncertain!(43.955_481_56, 0.000_000_35),
+            Self::FortySix => uncertain!(45.953_689_0, 0.000_002_4),
+            Self::FortyEight => uncertain!(47.952_522_76, 0.000_000_13),
         }
     }
 }
@@ -584,6 +629,7 @@ pub enum Ti {
 
 impl Ti {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::FortySix => Some(uncertain!(0.0825, 0.0003)),
@@ -595,6 +641,7 @@ impl Ti {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::FortySix => 46,
@@ -606,13 +653,14 @@ impl Ti {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::FortySix => uncertain!(45.95262772, 0.00000035),
-            Self::FortySeven => uncertain!(46.95175879, 0.00000038),
-            Self::FortyEight => uncertain!(47.94794198, 0.00000038),
-            Self::FortyNine => uncertain!(48.94786568, 0.00000039),
-            Self::Fifty => uncertain!(49.94478689, 0.00000039),
+            Self::FortySix => uncertain!(45.952_627_72, 0.000_000_35),
+            Self::FortySeven => uncertain!(46.951_758_79, 0.000_000_38),
+            Self::FortyEight => uncertain!(47.947_941_98, 0.000_000_38),
+            Self::FortyNine => uncertain!(48.947_865_68, 0.000_000_39),
+            Self::Fifty => uncertain!(49.944_786_89, 0.000_000_39),
         }
     }
 }
@@ -627,6 +675,7 @@ pub enum V {
 
 impl V {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::Fifty => Some(uncertain!(0.00250, 0.00004)),
@@ -635,6 +684,7 @@ impl V {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::Fifty => 50,
@@ -643,10 +693,11 @@ impl V {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::Fifty => uncertain!(49.94715601, 0.00000095),
-            Self::FiftyOne => uncertain!(50.94395704, 0.00000094),
+            Self::Fifty => uncertain!(49.947_156_01, 0.000_000_95),
+            Self::FiftyOne => uncertain!(50.943_957_04, 0.000_000_94),
         }
     }
 }
@@ -663,6 +714,7 @@ pub enum Cr {
 
 impl Cr {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::Fifty => Some(uncertain!(0.04345, 0.00013)),
@@ -673,6 +725,7 @@ impl Cr {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::Fifty => 50,
@@ -683,12 +736,13 @@ impl Cr {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::Fifty => uncertain!(49.94604183, 0.00000094),
-            Self::FiftyTwo => uncertain!(51.94050623, 0.00000063),
-            Self::FiftyThree => uncertain!(52.94064815, 0.00000062),
-            Self::FiftyFour => uncertain!(53.93887916, 0.00000061),
+            Self::Fifty => uncertain!(49.946_041_83, 0.000_000_94),
+            Self::FiftyTwo => uncertain!(51.940_506_23, 0.000_000_63),
+            Self::FiftyThree => uncertain!(52.940_648_15, 0.000_000_62),
+            Self::FiftyFour => uncertain!(53.938_879_16, 0.000_000_61),
         }
     }
 }
@@ -705,6 +759,7 @@ pub enum Fe {
 
 impl Fe {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::FiftyFour => Some(uncertain!(0.05845, 0.00035)),
@@ -715,6 +770,7 @@ impl Fe {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::FiftyFour => 54,
@@ -725,12 +781,13 @@ impl Fe {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::FiftyFour => uncertain!(53.93960899, 0.00000053),
-            Self::FiftySix => uncertain!(55.93493633, 0.00000049),
-            Self::FiftySeven => uncertain!(56.93539284, 0.00000049),
-            Self::FiftyEight => uncertain!(57.93327443, 0.00000053),
+            Self::FiftyFour => uncertain!(53.939_608_99, 0.000_000_53),
+            Self::FiftySix => uncertain!(55.934_936_33, 0.000_000_49),
+            Self::FiftySeven => uncertain!(56.935_392_84, 0.000_000_49),
+            Self::FiftyEight => uncertain!(57.933_274_43, 0.000_000_53),
         }
     }
 }
@@ -748,17 +805,19 @@ pub enum Ni {
 
 impl Ni {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::FiftyEight => Some(uncertain!(0.68077, 0.00019)),
             Self::Sixty => Some(uncertain!(0.26223, 0.00015)),
-            Self::SixtyOne => Some(uncertain!(0.011399, 0.000013)),
-            Self::SixtyTwo => Some(uncertain!(0.036346, 0.000040)),
-            Self::SixtyFour => Some(uncertain!(0.009255, 0.000019)),
+            Self::SixtyOne => Some(uncertain!(0.011_399, 0.000_013)),
+            Self::SixtyTwo => Some(uncertain!(0.036_346, 0.000_040)),
+            Self::SixtyFour => Some(uncertain!(0.009_255, 0.000_019)),
         }
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::FiftyEight => 58,
@@ -770,13 +829,14 @@ impl Ni {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::FiftyEight => uncertain!(57.93534241, 0.00000052),
-            Self::Sixty => uncertain!(59.93078588, 0.00000052),
-            Self::SixtyOne => uncertain!(60.93105557, 0.00000052),
-            Self::SixtyTwo => uncertain!(61.92834537, 0.00000055),
-            Self::SixtyFour => uncertain!(63.92796682, 0.00000058),
+            Self::FiftyEight => uncertain!(57.935_342_41, 0.000_000_52),
+            Self::Sixty => uncertain!(59.930_785_88, 0.000_000_52),
+            Self::SixtyOne => uncertain!(60.931_055_57, 0.000_000_52),
+            Self::SixtyTwo => uncertain!(61.928_345_37, 0.000_000_55),
+            Self::SixtyFour => uncertain!(63.927_966_82, 0.000_000_58),
         }
     }
 }
@@ -791,6 +851,7 @@ pub enum Cu {
 
 impl Cu {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::SixtyThree => Some(uncertain!(0.6915, 0.0015)),
@@ -799,6 +860,7 @@ impl Cu {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::SixtyThree => 63,
@@ -807,10 +869,11 @@ impl Cu {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::SixtyThree => uncertain!(62.92959772, 0.00000056),
-            Self::SixtyFive => uncertain!(64.92778970, 0.00000071),
+            Self::SixtyThree => uncertain!(62.929_597_72, 0.000_000_56),
+            Self::SixtyFive => uncertain!(64.927_789_70, 0.000_000_71),
         }
     }
 }
@@ -828,6 +891,7 @@ pub enum Zn {
 
 impl Zn {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::SixtyFour => Some(uncertain!(0.4917, 0.0075)),
@@ -839,6 +903,7 @@ impl Zn {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::SixtyFour => 64,
@@ -850,13 +915,14 @@ impl Zn {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::SixtyFour => uncertain!(63.92914201, 0.00000071),
-            Self::SixtySix => uncertain!(65.92603381, 0.00000094),
-            Self::SixtySeven => uncertain!(66.92712775, 0.00000096),
-            Self::SixtyEight => uncertain!(67.92484455, 0.00000098),
-            Self::Seventy => uncertain!(69.9253192, 0.0000021),
+            Self::SixtyFour => uncertain!(63.929_142_01, 0.000_000_71),
+            Self::SixtySix => uncertain!(65.926_033_81, 0.000_000_94),
+            Self::SixtySeven => uncertain!(66.927_127_75, 0.000_000_96),
+            Self::SixtyEight => uncertain!(67.924_844_55, 0.000_000_98),
+            Self::Seventy => uncertain!(69.925_319_2, 0.000_002_1),
         }
     }
 }
@@ -871,6 +937,7 @@ pub enum Ga {
 
 impl Ga {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::SixtyNine => Some(uncertain!(0.60108, 0.00009)),
@@ -879,6 +946,7 @@ impl Ga {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::SixtyNine => 69,
@@ -887,10 +955,11 @@ impl Ga {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::SixtyNine => uncertain!(68.9255735, 0.0000013),
-            Self::SeventyOne => uncertain!(70.92470258, 0.00000087),
+            Self::SixtyNine => uncertain!(68.925_573_5, 0.000_001_3),
+            Self::SeventyOne => uncertain!(70.924_702_58, 0.000_000_87),
         }
     }
 }
@@ -908,6 +977,7 @@ pub enum Ge {
 
 impl Ge {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::Seventy => Some(uncertain!(0.2057, 0.0027)),
@@ -919,6 +989,7 @@ impl Ge {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::Seventy => 70,
@@ -930,13 +1001,14 @@ impl Ge {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::Seventy => uncertain!(69.92424875, 0.00000090),
-            Self::SeventyTwo => uncertain!(71.922075826, 0.000000081),
-            Self::SeventyThree => uncertain!(72.923458956, 0.000000061),
-            Self::SeventyFour => uncertain!(73.921177761, 0.000000013),
-            Self::SeventySix => uncertain!(75.921402726, 0.000000019),
+            Self::Seventy => uncertain!(69.924_248_75, 0.000_000_90),
+            Self::SeventyTwo => uncertain!(71.922_075_826, 0.000_000_081),
+            Self::SeventyThree => uncertain!(72.923_458_956, 0.000_000_061),
+            Self::SeventyFour => uncertain!(73.921_177_761, 0.000_000_013),
+            Self::SeventySix => uncertain!(75.921_402_726, 0.000_000_019),
         }
     }
 }
@@ -955,6 +1027,7 @@ pub enum Se {
 
 impl Se {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::SeventyFour => Some(uncertain!(0.0089, 0.0004)),
@@ -967,6 +1040,7 @@ impl Se {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::SeventyFour => 74,
@@ -979,14 +1053,15 @@ impl Se {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::SeventyFour => uncertain!(73.922475934, 0.000000015),
-            Self::SeventySix => uncertain!(75.919213704, 0.000000017),
-            Self::SeventySeven => uncertain!(76.919914154, 0.000000067),
-            Self::SeventyEight => uncertain!(77.91730928, 0.00000020),
-            Self::Eighty => uncertain!(79.9165218, 0.0000013),
-            Self::EightyTwo => uncertain!(81.9166995, 0.0000015),
+            Self::SeventyFour => uncertain!(73.922_475_934, 0.000_000_015),
+            Self::SeventySix => uncertain!(75.919_213_704, 0.000_000_017),
+            Self::SeventySeven => uncertain!(76.919_914_154, 0.000_000_067),
+            Self::SeventyEight => uncertain!(77.917_309_28, 0.000_000_20),
+            Self::Eighty => uncertain!(79.916_521_8, 0.000_001_3),
+            Self::EightyTwo => uncertain!(81.916_699_5, 0.000_001_5),
         }
     }
 }
@@ -1001,6 +1076,7 @@ pub enum Br {
 
 impl Br {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::SeventyNine => Some(uncertain!(0.5069, 0.0007)),
@@ -1009,6 +1085,7 @@ impl Br {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::SeventyNine => 79,
@@ -1017,10 +1094,11 @@ impl Br {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::SeventyNine => uncertain!(78.9183376, 0.0000014),
-            Self::EightyOne => uncertain!(80.9162897, 0.0000014),
+            Self::SeventyNine => uncertain!(78.918_337_6, 0.000_001_4),
+            Self::EightyOne => uncertain!(80.916_289_7, 0.000_001_4),
         }
     }
 }
@@ -1039,6 +1117,7 @@ pub enum Kr {
 
 impl Kr {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::SeventyEight => Some(uncertain!(0.00355, 0.00003)),
@@ -1051,6 +1130,7 @@ impl Kr {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::SeventyEight => 78,
@@ -1063,14 +1143,15 @@ impl Kr {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::SeventyEight => uncertain!(77.92036494, 0.00000076),
-            Self::Eighty => uncertain!(79.91637808, 0.00000075),
-            Self::EightyTwo => uncertain!(81.91348273, 0.00000094),
-            Self::EightyThree => uncertain!(82.91412716, 0.00000032),
-            Self::EightyFour => uncertain!(83.9114977282, 0.0000000044),
-            Self::EightySix => uncertain!(85.9106106269, 0.0000000041),
+            Self::SeventyEight => uncertain!(77.920_364_94, 0.000_000_76),
+            Self::Eighty => uncertain!(79.916_378_08, 0.000_000_75),
+            Self::EightyTwo => uncertain!(81.913_482_73, 0.000_000_94),
+            Self::EightyThree => uncertain!(82.914_127_16, 0.000_000_32),
+            Self::EightyFour => uncertain!(83.911_497_728_2, 0.000_000_004_4),
+            Self::EightySix => uncertain!(85.910_610_626_9, 0.000_000_004_1),
         }
     }
 }
@@ -1085,6 +1166,7 @@ pub enum Rb {
 
 impl Rb {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::EightyFive => Some(uncertain!(0.7217, 0.0002)),
@@ -1093,6 +1175,7 @@ impl Rb {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::EightyFive => 85,
@@ -1101,10 +1184,11 @@ impl Rb {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::EightyFive => uncertain!(84.9117897379, 0.0000000054),
-            Self::EightySeven => uncertain!(86.9091805310, 0.0000000060),
+            Self::EightyFive => uncertain!(84.911_789_737_9, 0.000_000_005_4),
+            Self::EightySeven => uncertain!(86.909_180_531_0, 0.000_000_006_0),
         }
     }
 }
@@ -1121,6 +1205,7 @@ pub enum Sr {
 
 impl Sr {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::EightyFour => Some(uncertain!(0.0056, 0.0001)),
@@ -1131,6 +1216,7 @@ impl Sr {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::EightyFour => 84,
@@ -1141,12 +1227,13 @@ impl Sr {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::EightyFour => uncertain!(83.9134191, 0.0000013),
-            Self::EightySix => uncertain!(85.9092606, 0.0000012),
-            Self::EightySeven => uncertain!(86.9088775, 0.0000012),
-            Self::EightyEight => uncertain!(87.9056125, 0.0000012),
+            Self::EightyFour => uncertain!(83.913_419_1, 0.000_001_3),
+            Self::EightySix => uncertain!(85.909_260_6, 0.000_001_2),
+            Self::EightySeven => uncertain!(86.908_877_5, 0.000_001_2),
+            Self::EightyEight => uncertain!(87.905_612_5, 0.000_001_2),
         }
     }
 }
@@ -1164,6 +1251,7 @@ pub enum Zr {
 
 impl Zr {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::Ninety => Some(uncertain!(0.5145, 0.0040)),
@@ -1175,6 +1263,7 @@ impl Zr {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::Ninety => 90,
@@ -1186,13 +1275,14 @@ impl Zr {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::Ninety => uncertain!(89.9046977, 0.0000020),
-            Self::NinetyOne => uncertain!(90.9056396, 0.0000020),
-            Self::NinetyTwo => uncertain!(91.9050347, 0.0000020),
-            Self::NinetyFour => uncertain!(93.9063108, 0.0000020),
-            Self::NinetySix => uncertain!(95.9082714, 0.0000021),
+            Self::Ninety => uncertain!(89.904_697_7, 0.000_002_0),
+            Self::NinetyOne => uncertain!(90.905_639_6, 0.000_002_0),
+            Self::NinetyTwo => uncertain!(91.905_034_7, 0.000_002_0),
+            Self::NinetyFour => uncertain!(93.906_310_8, 0.000_002_0),
+            Self::NinetySix => uncertain!(95.908_271_4, 0.000_002_1),
         }
     }
 }
@@ -1212,6 +1302,7 @@ pub enum Mo {
 
 impl Mo {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::NinetyTwo => Some(uncertain!(0.1453, 0.0030)),
@@ -1225,6 +1316,7 @@ impl Mo {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::NinetyTwo => 92,
@@ -1238,15 +1330,16 @@ impl Mo {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::NinetyTwo => uncertain!(91.90680796, 0.00000084),
-            Self::NinetyFour => uncertain!(93.90508490, 0.00000048),
-            Self::NinetyFive => uncertain!(94.90583877, 0.00000047),
-            Self::NinetySix => uncertain!(95.90467612, 0.00000047),
-            Self::NinetySeven => uncertain!(96.90601812, 0.00000049),
-            Self::NinetyEight => uncertain!(97.90540482, 0.00000049),
-            Self::OneHundred => uncertain!(99.9074718, 0.0000011),
+            Self::NinetyTwo => uncertain!(91.906_807_96, 0.000_000_84),
+            Self::NinetyFour => uncertain!(93.905_084_90, 0.000_000_48),
+            Self::NinetyFive => uncertain!(94.905_838_77, 0.000_000_47),
+            Self::NinetySix => uncertain!(95.904_676_12, 0.000_000_47),
+            Self::NinetySeven => uncertain!(96.906_018_12, 0.000_000_49),
+            Self::NinetyEight => uncertain!(97.905_404_82, 0.000_000_49),
+            Self::OneHundred => uncertain!(99.907_471_8, 0.000_001_1),
         }
     }
 }
@@ -1262,6 +1355,7 @@ pub enum Tc {
 
 impl Tc {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::NinetySeven => None,
@@ -1271,6 +1365,7 @@ impl Tc {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::NinetySeven => 97,
@@ -1280,11 +1375,12 @@ impl Tc {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::NinetySeven => uncertain!(96.9063667, 0.0000040),
-            Self::NinetyEight => uncertain!(97.9072124, 0.0000036),
-            Self::NinetyNine => uncertain!(98.9062508, 0.0000010),
+            Self::NinetySeven => uncertain!(96.906_366_7, 0.000_004_0),
+            Self::NinetyEight => uncertain!(97.907_212_4, 0.000_003_6),
+            Self::NinetyNine => uncertain!(98.906_250_8, 0.000_001_0),
         }
     }
 }
@@ -1304,6 +1400,7 @@ pub enum Ru {
 
 impl Ru {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::NinetySix => Some(uncertain!(0.0554, 0.0014)),
@@ -1317,6 +1414,7 @@ impl Ru {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::NinetySix => 96,
@@ -1330,15 +1428,16 @@ impl Ru {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::NinetySix => uncertain!(95.90759025, 0.00000049),
-            Self::NinetyEight => uncertain!(97.9052868, 0.0000069),
-            Self::NinetyNine => uncertain!(98.9059341, 0.0000011),
-            Self::OneHundred => uncertain!(99.9042143, 0.0000011),
-            Self::OneHundredOne => uncertain!(100.9055769, 0.0000012),
-            Self::OneHundredTwo => uncertain!(101.9043441, 0.0000012),
-            Self::OneHundredFour => uncertain!(103.9054275, 0.0000028),
+            Self::NinetySix => uncertain!(95.907_590_25, 0.000_000_49),
+            Self::NinetyEight => uncertain!(97.905_286_8, 0.000_006_9),
+            Self::NinetyNine => uncertain!(98.905_934_1, 0.000_001_1),
+            Self::OneHundred => uncertain!(99.904_214_3, 0.000_001_1),
+            Self::OneHundredOne => uncertain!(100.905_576_9, 0.000_001_2),
+            Self::OneHundredTwo => uncertain!(101.904_344_1, 0.000_001_2),
+            Self::OneHundredFour => uncertain!(103.905_427_5, 0.000_002_8),
         }
     }
 }
@@ -1357,6 +1456,7 @@ pub enum Pd {
 
 impl Pd {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredTwo => Some(uncertain!(0.0102, 0.0001)),
@@ -1369,6 +1469,7 @@ impl Pd {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredTwo => 102,
@@ -1381,14 +1482,15 @@ impl Pd {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredTwo => uncertain!(101.9056022, 0.0000028),
-            Self::OneHundredFour => uncertain!(103.9040305, 0.0000014),
-            Self::OneHundredFive => uncertain!(104.9050796, 0.0000012),
-            Self::OneHundredSix => uncertain!(105.9034804, 0.0000012),
-            Self::OneHundredEight => uncertain!(107.9038916, 0.0000012),
-            Self::OneHundredTen => uncertain!(109.90517220, 0.00000075),
+            Self::OneHundredTwo => uncertain!(101.905_602_2, 0.000_002_8),
+            Self::OneHundredFour => uncertain!(103.904_030_5, 0.000_001_4),
+            Self::OneHundredFive => uncertain!(104.905_079_6, 0.000_001_2),
+            Self::OneHundredSix => uncertain!(105.903_480_4, 0.000_001_2),
+            Self::OneHundredEight => uncertain!(107.903_891_6, 0.000_001_2),
+            Self::OneHundredTen => uncertain!(109.905_172_20, 0.000_000_75),
         }
     }
 }
@@ -1403,6 +1505,7 @@ pub enum Ag {
 
 impl Ag {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredSeven => Some(uncertain!(0.51839, 0.00008)),
@@ -1411,6 +1514,7 @@ impl Ag {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredSeven => 107,
@@ -1419,10 +1523,11 @@ impl Ag {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredSeven => uncertain!(106.9050916, 0.0000026),
-            Self::OneHundredNine => uncertain!(108.9047553, 0.0000014),
+            Self::OneHundredSeven => uncertain!(106.905_091_6, 0.000_002_6),
+            Self::OneHundredNine => uncertain!(108.904_755_3, 0.000_001_4),
         }
     }
 }
@@ -1443,6 +1548,7 @@ pub enum Cd {
 
 impl Cd {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredSix => Some(uncertain!(0.0125, 0.0006)),
@@ -1457,6 +1563,7 @@ impl Cd {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredSix => 106,
@@ -1471,16 +1578,17 @@ impl Cd {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredSix => uncertain!(105.9064599, 0.0000012),
-            Self::OneHundredEight => uncertain!(107.9041834, 0.0000012),
-            Self::OneHundredTen => uncertain!(109.90300661, 0.00000061),
-            Self::OneHundredEleven => uncertain!(110.90418287, 0.00000061),
-            Self::OneHundredTwelve => uncertain!(111.90276287, 0.00000060),
-            Self::OneHundredThirteen => uncertain!(112.90440813, 0.00000045),
-            Self::OneHundredFourteen => uncertain!(113.90336509, 0.00000043),
-            Self::OneHundredSixteen => uncertain!(115.90476315, 0.00000017),
+            Self::OneHundredSix => uncertain!(105.906_459_9, 0.000_001_2),
+            Self::OneHundredEight => uncertain!(107.904_183_4, 0.000_001_2),
+            Self::OneHundredTen => uncertain!(109.903_006_61, 0.000_000_61),
+            Self::OneHundredEleven => uncertain!(110.904_182_87, 0.000_000_61),
+            Self::OneHundredTwelve => uncertain!(111.902_762_87, 0.000_000_60),
+            Self::OneHundredThirteen => uncertain!(112.904_408_13, 0.000_000_45),
+            Self::OneHundredFourteen => uncertain!(113.903_365_09, 0.000_000_43),
+            Self::OneHundredSixteen => uncertain!(115.904_763_15, 0.000_000_17),
         }
     }
 }
@@ -1495,6 +1603,7 @@ pub enum In {
 
 impl In {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredThirteen => Some(uncertain!(0.0429, 0.0005)),
@@ -1503,6 +1612,7 @@ impl In {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredThirteen => 113,
@@ -1511,10 +1621,11 @@ impl In {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredThirteen => uncertain!(112.90406184, 0.00000091),
-            Self::OneHundredFifteen => uncertain!(114.903878776, 0.000000012),
+            Self::OneHundredThirteen => uncertain!(112.904_061_84, 0.000_000_91),
+            Self::OneHundredFifteen => uncertain!(114.903_878_776, 0.000_000_012),
         }
     }
 }
@@ -1537,6 +1648,7 @@ pub enum Sn {
 
 impl Sn {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredTwelve => Some(uncertain!(0.0097, 0.0001)),
@@ -1553,6 +1665,7 @@ impl Sn {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredTwelve => 112,
@@ -1569,18 +1682,19 @@ impl Sn {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredTwelve => uncertain!(111.90482387, 0.00000061),
-            Self::OneHundredFourteen => uncertain!(113.9027827, 0.0000010),
-            Self::OneHundredFifteen => uncertain!(114.903344699, 0.000000016),
-            Self::OneHundredSixteen => uncertain!(115.90174280, 0.00000010),
-            Self::OneHundredSeventeen => uncertain!(116.90295398, 0.00000052),
-            Self::OneHundredEighteen => uncertain!(117.90160657, 0.00000054),
-            Self::OneHundredNineteen => uncertain!(118.90331117, 0.00000078),
-            Self::OneHundredTwenty => uncertain!(119.90220163, 0.00000097),
-            Self::OneHundredTwentyTwo => uncertain!(121.9034438, 0.0000026),
-            Self::OneHundredTwentyFour => uncertain!(123.9052766, 0.0000011),
+            Self::OneHundredTwelve => uncertain!(111.904_823_87, 0.000_000_61),
+            Self::OneHundredFourteen => uncertain!(113.902_782_7, 0.000_001_0),
+            Self::OneHundredFifteen => uncertain!(114.903_344_699, 0.000_000_016),
+            Self::OneHundredSixteen => uncertain!(115.901_742_80, 0.000_000_10),
+            Self::OneHundredSeventeen => uncertain!(116.902_953_98, 0.000_000_52),
+            Self::OneHundredEighteen => uncertain!(117.901_606_57, 0.000_000_54),
+            Self::OneHundredNineteen => uncertain!(118.903_311_17, 0.000_000_78),
+            Self::OneHundredTwenty => uncertain!(119.902_201_63, 0.000_000_97),
+            Self::OneHundredTwentyTwo => uncertain!(121.903_443_8, 0.000_002_6),
+            Self::OneHundredTwentyFour => uncertain!(123.905_276_6, 0.000_001_1),
         }
     }
 }
@@ -1595,6 +1709,7 @@ pub enum Sb {
 
 impl Sb {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredTwentyOne => Some(uncertain!(0.5721, 0.0005)),
@@ -1603,6 +1718,7 @@ impl Sb {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredTwentyOne => 121,
@@ -1611,10 +1727,11 @@ impl Sb {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredTwentyOne => uncertain!(120.9038120, 0.0000030),
-            Self::OneHundredTwentyThree => uncertain!(122.9042132, 0.0000023),
+            Self::OneHundredTwentyOne => uncertain!(120.903_812_0, 0.000_003_0),
+            Self::OneHundredTwentyThree => uncertain!(122.904_213_2, 0.000_002_3),
         }
     }
 }
@@ -1635,6 +1752,7 @@ pub enum Te {
 
 impl Te {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredTwenty => Some(uncertain!(0.0009, 0.0001)),
@@ -1649,6 +1767,7 @@ impl Te {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredTwenty => 120,
@@ -1663,16 +1782,17 @@ impl Te {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredTwenty => uncertain!(119.9040593, 0.0000033),
-            Self::OneHundredTwentyTwo => uncertain!(121.9030435, 0.0000016),
-            Self::OneHundredTwentyThree => uncertain!(122.9042698, 0.0000016),
-            Self::OneHundredTwentyFour => uncertain!(123.9028171, 0.0000016),
-            Self::OneHundredTwentyFive => uncertain!(124.9044299, 0.0000016),
-            Self::OneHundredTwentySix => uncertain!(125.9033109, 0.0000016),
-            Self::OneHundredTwentyEight => uncertain!(127.90446128, 0.00000093),
-            Self::OneHundredThirty => uncertain!(129.906222748, 0.000000012),
+            Self::OneHundredTwenty => uncertain!(119.904_059_3, 0.000_003_3),
+            Self::OneHundredTwentyTwo => uncertain!(121.903_043_5, 0.000_001_6),
+            Self::OneHundredTwentyThree => uncertain!(122.904_269_8, 0.000_001_6),
+            Self::OneHundredTwentyFour => uncertain!(123.902_817_1, 0.000_001_6),
+            Self::OneHundredTwentyFive => uncertain!(124.904_429_9, 0.000_001_6),
+            Self::OneHundredTwentySix => uncertain!(125.903_310_9, 0.000_001_6),
+            Self::OneHundredTwentyEight => uncertain!(127.904_461_28, 0.000_000_93),
+            Self::OneHundredThirty => uncertain!(129.906_222_748, 0.000_000_012),
         }
     }
 }
@@ -1694,21 +1814,23 @@ pub enum Xe {
 
 impl Xe {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredTwentyFour => Some(uncertain!(0.000952, 0.000003)),
-            Self::OneHundredTwentySix => Some(uncertain!(0.000890, 0.000002)),
-            Self::OneHundredTwentyEight => Some(uncertain!(0.019102, 0.000008)),
-            Self::OneHundredTwentyNine => Some(uncertain!(0.264006, 0.000082)),
-            Self::OneHundredThirty => Some(uncertain!(0.040710, 0.000013)),
-            Self::OneHundredThirtyOne => Some(uncertain!(0.212324, 0.000030)),
-            Self::OneHundredThirtyTwo => Some(uncertain!(0.269086, 0.000033)),
-            Self::OneHundredThirtyFour => Some(uncertain!(0.104357, 0.000021)),
-            Self::OneHundredThirtySix => Some(uncertain!(0.088573, 0.000044)),
+            Self::OneHundredTwentyFour => Some(uncertain!(0.000_952, 0.000_003)),
+            Self::OneHundredTwentySix => Some(uncertain!(0.000_890, 0.000_002)),
+            Self::OneHundredTwentyEight => Some(uncertain!(0.019_102, 0.000_008)),
+            Self::OneHundredTwentyNine => Some(uncertain!(0.264_006, 0.000_082)),
+            Self::OneHundredThirty => Some(uncertain!(0.040_710, 0.000_013)),
+            Self::OneHundredThirtyOne => Some(uncertain!(0.212_324, 0.000_030)),
+            Self::OneHundredThirtyTwo => Some(uncertain!(0.269_086, 0.000_033)),
+            Self::OneHundredThirtyFour => Some(uncertain!(0.104_357, 0.000_021)),
+            Self::OneHundredThirtySix => Some(uncertain!(0.088_573, 0.000_044)),
         }
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredTwentyFour => 124,
@@ -1724,17 +1846,18 @@ impl Xe {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredTwentyFour => uncertain!(123.9058920, 0.0000019),
-            Self::OneHundredTwentySix => uncertain!(125.9042983, 0.0000038),
-            Self::OneHundredTwentyEight => uncertain!(127.9035310, 0.0000011),
-            Self::OneHundredTwentyNine => uncertain!(128.9047808611, 0.0000000060),
-            Self::OneHundredThirty => uncertain!(129.903509349, 0.000000010),
-            Self::OneHundredThirtyOne => uncertain!(130.90508406, 0.00000024),
-            Self::OneHundredThirtyTwo => uncertain!(131.9041550856, 0.0000000056),
-            Self::OneHundredThirtyFour => uncertain!(133.90539466, 0.00000090),
-            Self::OneHundredThirtySix => uncertain!(135.907214484, 0.000000011),
+            Self::OneHundredTwentyFour => uncertain!(123.905_892_0, 0.000_001_9),
+            Self::OneHundredTwentySix => uncertain!(125.904_298_3, 0.000_003_8),
+            Self::OneHundredTwentyEight => uncertain!(127.903_531_0, 0.000_001_1),
+            Self::OneHundredTwentyNine => uncertain!(128.904_780_861_1, 0.000_000_006_0),
+            Self::OneHundredThirty => uncertain!(129.903_509_349, 0.000_000_010),
+            Self::OneHundredThirtyOne => uncertain!(130.905_084_06, 0.000_000_24),
+            Self::OneHundredThirtyTwo => uncertain!(131.904_155_085_6, 0.000_000_005_6),
+            Self::OneHundredThirtyFour => uncertain!(133.905_394_66, 0.000_000_90),
+            Self::OneHundredThirtySix => uncertain!(135.907_214_484, 0.000_000_011),
         }
     }
 }
@@ -1754,6 +1877,7 @@ pub enum Ba {
 
 impl Ba {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredThirty => Some(uncertain!(0.00106, 0.00001)),
@@ -1767,6 +1891,7 @@ impl Ba {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredThirty => 130,
@@ -1780,15 +1905,16 @@ impl Ba {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredThirty => uncertain!(129.9063207, 0.0000028),
-            Self::OneHundredThirtyTwo => uncertain!(131.9050611, 0.0000011),
-            Self::OneHundredThirtyFour => uncertain!(133.90450818, 0.00000030),
-            Self::OneHundredThirtyFive => uncertain!(134.90568838, 0.00000029),
-            Self::OneHundredThirtySix => uncertain!(135.90457573, 0.00000029),
-            Self::OneHundredThirtySeven => uncertain!(136.90582714, 0.00000030),
-            Self::OneHundredThirtyEight => uncertain!(137.90524700, 0.00000031),
+            Self::OneHundredThirty => uncertain!(129.906_320_7, 0.000_002_8),
+            Self::OneHundredThirtyTwo => uncertain!(131.905_061_1, 0.000_001_1),
+            Self::OneHundredThirtyFour => uncertain!(133.904_508_18, 0.000_000_30),
+            Self::OneHundredThirtyFive => uncertain!(134.905_688_38, 0.000_000_29),
+            Self::OneHundredThirtySix => uncertain!(135.904_575_73, 0.000_000_29),
+            Self::OneHundredThirtySeven => uncertain!(136.905_827_14, 0.000_000_30),
+            Self::OneHundredThirtyEight => uncertain!(137.905_247_00, 0.000_000_31),
         }
     }
 }
@@ -1803,14 +1929,16 @@ pub enum La {
 
 impl La {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredThirtyEight => Some(uncertain!(0.0008881, 0.0000071)),
-            Self::OneHundredThirtyNine => Some(uncertain!(0.9991119, 0.0000071)),
+            Self::OneHundredThirtyEight => Some(uncertain!(0.000_888_1, 0.000_007_1)),
+            Self::OneHundredThirtyNine => Some(uncertain!(0.999_111_9, 0.000_007_1)),
         }
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredThirtyEight => 138,
@@ -1819,10 +1947,11 @@ impl La {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredThirtyEight => uncertain!(137.9071149, 0.0000037),
-            Self::OneHundredThirtyNine => uncertain!(138.9063563, 0.0000024),
+            Self::OneHundredThirtyEight => uncertain!(137.907_114_9, 0.000_003_7),
+            Self::OneHundredThirtyNine => uncertain!(138.906_356_3, 0.000_002_4),
         }
     }
 }
@@ -1839,6 +1968,7 @@ pub enum Ce {
 
 impl Ce {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredThirtySix => Some(uncertain!(0.00185, 0.00002)),
@@ -1849,6 +1979,7 @@ impl Ce {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredThirtySix => 136,
@@ -1859,12 +1990,13 @@ impl Ce {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredThirtySix => uncertain!(135.90712921, 0.00000041),
-            Self::OneHundredThirtyEight => uncertain!(137.905991, 0.000011),
-            Self::OneHundredForty => uncertain!(139.9054431, 0.0000023),
-            Self::OneHundredFortyTwo => uncertain!(141.9092504, 0.0000029),
+            Self::OneHundredThirtySix => uncertain!(135.907_129_21, 0.000_000_41),
+            Self::OneHundredThirtyEight => uncertain!(137.905_991, 0.000_011),
+            Self::OneHundredForty => uncertain!(139.905_443_1, 0.000_002_3),
+            Self::OneHundredFortyTwo => uncertain!(141.909_250_4, 0.000_002_9),
         }
     }
 }
@@ -1884,6 +2016,7 @@ pub enum Nd {
 
 impl Nd {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredFortyTwo => Some(uncertain!(0.27152, 0.00040)),
@@ -1897,6 +2030,7 @@ impl Nd {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredFortyTwo => 142,
@@ -1910,15 +2044,16 @@ impl Nd {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredFortyTwo => uncertain!(141.9077290, 0.0000020),
-            Self::OneHundredFortyThree => uncertain!(142.9098200, 0.0000020),
-            Self::OneHundredFortyFour => uncertain!(143.9100930, 0.0000020),
-            Self::OneHundredFortyFive => uncertain!(144.9125793, 0.0000020),
-            Self::OneHundredFortySix => uncertain!(145.9131226, 0.0000020),
-            Self::OneHundredFortyEight => uncertain!(147.9168993, 0.0000026),
-            Self::OneHundredFifty => uncertain!(149.9209022, 0.0000018),
+            Self::OneHundredFortyTwo => uncertain!(141.907_729_0, 0.000_002_0),
+            Self::OneHundredFortyThree => uncertain!(142.909_820_0, 0.000_002_0),
+            Self::OneHundredFortyFour => uncertain!(143.910_093_0, 0.000_002_0),
+            Self::OneHundredFortyFive => uncertain!(144.912_579_3, 0.000_002_0),
+            Self::OneHundredFortySix => uncertain!(145.913_122_6, 0.000_002_0),
+            Self::OneHundredFortyEight => uncertain!(147.916_899_3, 0.000_002_6),
+            Self::OneHundredFifty => uncertain!(149.920_902_2, 0.000_001_8),
         }
     }
 }
@@ -1933,6 +2068,7 @@ pub enum Pm {
 
 impl Pm {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredFortyFive => None,
@@ -1941,6 +2077,7 @@ impl Pm {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredFortyFive => 145,
@@ -1949,10 +2086,11 @@ impl Pm {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredFortyFive => uncertain!(144.9127559, 0.0000033),
-            Self::OneHundredFortySeven => uncertain!(146.9151450, 0.0000019),
+            Self::OneHundredFortyFive => uncertain!(144.912_755_9, 0.000_003_3),
+            Self::OneHundredFortySeven => uncertain!(146.915_145_0, 0.000_001_9),
         }
     }
 }
@@ -1972,6 +2110,7 @@ pub enum Sm {
 
 impl Sm {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredFortyFour => Some(uncertain!(0.0307, 0.0007)),
@@ -1985,6 +2124,7 @@ impl Sm {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredFortyFour => 144,
@@ -1998,15 +2138,16 @@ impl Sm {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredFortyFour => uncertain!(143.9120065, 0.0000021),
-            Self::OneHundredFortySeven => uncertain!(146.9149044, 0.0000019),
-            Self::OneHundredFortyEight => uncertain!(147.9148292, 0.0000019),
-            Self::OneHundredFortyNine => uncertain!(148.9171921, 0.0000018),
-            Self::OneHundredFifty => uncertain!(149.9172829, 0.0000018),
-            Self::OneHundredFiftyTwo => uncertain!(151.9197397, 0.0000018),
-            Self::OneHundredFiftyFour => uncertain!(153.9222169, 0.0000020),
+            Self::OneHundredFortyFour => uncertain!(143.912_006_5, 0.000_002_1),
+            Self::OneHundredFortySeven => uncertain!(146.914_904_4, 0.000_001_9),
+            Self::OneHundredFortyEight => uncertain!(147.914_829_2, 0.000_001_9),
+            Self::OneHundredFortyNine => uncertain!(148.917_192_1, 0.000_001_8),
+            Self::OneHundredFifty => uncertain!(149.917_282_9, 0.000_001_8),
+            Self::OneHundredFiftyTwo => uncertain!(151.919_739_7, 0.000_001_8),
+            Self::OneHundredFiftyFour => uncertain!(153.922_216_9, 0.000_002_0),
         }
     }
 }
@@ -2021,6 +2162,7 @@ pub enum Eu {
 
 impl Eu {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredFiftyOne => Some(uncertain!(0.4781, 0.0006)),
@@ -2029,6 +2171,7 @@ impl Eu {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredFiftyOne => 151,
@@ -2037,10 +2180,11 @@ impl Eu {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredFiftyOne => uncertain!(150.9198578, 0.0000018),
-            Self::OneHundredFiftyThree => uncertain!(152.9212380, 0.0000018),
+            Self::OneHundredFiftyOne => uncertain!(150.919_857_8, 0.000_001_8),
+            Self::OneHundredFiftyThree => uncertain!(152.921_238_0, 0.000_001_8),
         }
     }
 }
@@ -2060,6 +2204,7 @@ pub enum Gd {
 
 impl Gd {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredFiftyTwo => Some(uncertain!(0.0020, 0.0001)),
@@ -2073,6 +2218,7 @@ impl Gd {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredFiftyTwo => 152,
@@ -2086,15 +2232,16 @@ impl Gd {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredFiftyTwo => uncertain!(151.9197995, 0.0000018),
-            Self::OneHundredFiftyFour => uncertain!(153.9208741, 0.0000017),
-            Self::OneHundredFiftyFive => uncertain!(154.9226305, 0.0000017),
-            Self::OneHundredFiftySix => uncertain!(155.9221312, 0.0000017),
-            Self::OneHundredFiftySeven => uncertain!(156.9239686, 0.0000017),
-            Self::OneHundredFiftyEight => uncertain!(157.9241123, 0.0000017),
-            Self::OneHundredSixty => uncertain!(159.9270624, 0.0000018),
+            Self::OneHundredFiftyTwo => uncertain!(151.919_799_5, 0.000_001_8),
+            Self::OneHundredFiftyFour => uncertain!(153.920_874_1, 0.000_001_7),
+            Self::OneHundredFiftyFive => uncertain!(154.922_630_5, 0.000_001_7),
+            Self::OneHundredFiftySix => uncertain!(155.922_131_2, 0.000_001_7),
+            Self::OneHundredFiftySeven => uncertain!(156.923_968_6, 0.000_001_7),
+            Self::OneHundredFiftyEight => uncertain!(157.924_112_3, 0.000_001_7),
+            Self::OneHundredSixty => uncertain!(159.927_062_4, 0.000_001_8),
         }
     }
 }
@@ -2114,6 +2261,7 @@ pub enum Dy {
 
 impl Dy {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredFiftySix => Some(uncertain!(0.00056, 0.00003)),
@@ -2127,6 +2275,7 @@ impl Dy {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredFiftySix => 156,
@@ -2140,15 +2289,16 @@ impl Dy {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredFiftySix => uncertain!(155.9242847, 0.0000017),
-            Self::OneHundredFiftyEight => uncertain!(157.9244159, 0.0000031),
-            Self::OneHundredSixty => uncertain!(159.9252046, 0.0000020),
-            Self::OneHundredSixtyOne => uncertain!(160.9269405, 0.0000020),
-            Self::OneHundredSixtyTwo => uncertain!(161.9268056, 0.0000020),
-            Self::OneHundredSixtyThree => uncertain!(162.9287383, 0.0000020),
-            Self::OneHundredSixtyFour => uncertain!(163.9291819, 0.0000020),
+            Self::OneHundredFiftySix => uncertain!(155.924_284_7, 0.000_001_7),
+            Self::OneHundredFiftyEight => uncertain!(157.924_415_9, 0.000_003_1),
+            Self::OneHundredSixty => uncertain!(159.925_204_6, 0.000_002_0),
+            Self::OneHundredSixtyOne => uncertain!(160.926_940_5, 0.000_002_0),
+            Self::OneHundredSixtyTwo => uncertain!(161.926_805_6, 0.000_002_0),
+            Self::OneHundredSixtyThree => uncertain!(162.928_738_3, 0.000_002_0),
+            Self::OneHundredSixtyFour => uncertain!(163.929_181_9, 0.000_002_0),
         }
     }
 }
@@ -2167,6 +2317,7 @@ pub enum Er {
 
 impl Er {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredSixtyTwo => Some(uncertain!(0.00139, 0.00005)),
@@ -2179,6 +2330,7 @@ impl Er {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredSixtyTwo => 162,
@@ -2191,14 +2343,15 @@ impl Er {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredSixtyTwo => uncertain!(161.9287884, 0.0000020),
-            Self::OneHundredSixtyFour => uncertain!(163.9292088, 0.0000020),
-            Self::OneHundredSixtySix => uncertain!(165.9302995, 0.0000022),
-            Self::OneHundredSixtySeven => uncertain!(166.9320546, 0.0000022),
-            Self::OneHundredSixtyEight => uncertain!(167.9323767, 0.0000022),
-            Self::OneHundredSeventy => uncertain!(169.9354702, 0.0000026),
+            Self::OneHundredSixtyTwo => uncertain!(161.928_788_4, 0.000_002_0),
+            Self::OneHundredSixtyFour => uncertain!(163.929_208_8, 0.000_002_0),
+            Self::OneHundredSixtySix => uncertain!(165.930_299_5, 0.000_002_2),
+            Self::OneHundredSixtySeven => uncertain!(166.932_054_6, 0.000_002_2),
+            Self::OneHundredSixtyEight => uncertain!(167.932_376_7, 0.000_002_2),
+            Self::OneHundredSeventy => uncertain!(169.935_470_2, 0.000_002_6),
         }
     }
 }
@@ -2218,6 +2371,7 @@ pub enum Yb {
 
 impl Yb {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredSixtyEight => Some(uncertain!(0.00123, 0.00003)),
@@ -2231,6 +2385,7 @@ impl Yb {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredSixtyEight => 168,
@@ -2244,15 +2399,16 @@ impl Yb {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredSixtyEight => uncertain!(167.9338896, 0.0000022),
-            Self::OneHundredSeventy => uncertain!(169.9347664, 0.0000022),
-            Self::OneHundredSeventyOne => uncertain!(170.9363302, 0.0000022),
-            Self::OneHundredSeventyTwo => uncertain!(171.9363859, 0.0000022),
-            Self::OneHundredSeventyThree => uncertain!(172.9382151, 0.0000022),
-            Self::OneHundredSeventyFour => uncertain!(173.9388664, 0.0000022),
-            Self::OneHundredSeventySix => uncertain!(175.9425764, 0.0000024),
+            Self::OneHundredSixtyEight => uncertain!(167.933_889_6, 0.000_002_2),
+            Self::OneHundredSeventy => uncertain!(169.934_766_4, 0.000_002_2),
+            Self::OneHundredSeventyOne => uncertain!(170.936_330_2, 0.000_002_2),
+            Self::OneHundredSeventyTwo => uncertain!(171.936_385_9, 0.000_002_2),
+            Self::OneHundredSeventyThree => uncertain!(172.938_215_1, 0.000_002_2),
+            Self::OneHundredSeventyFour => uncertain!(173.938_866_4, 0.000_002_2),
+            Self::OneHundredSeventySix => uncertain!(175.942_576_4, 0.000_002_4),
         }
     }
 }
@@ -2267,6 +2423,7 @@ pub enum Lu {
 
 impl Lu {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredSeventyFive => Some(uncertain!(0.97401, 0.00013)),
@@ -2275,6 +2432,7 @@ impl Lu {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredSeventyFive => 175,
@@ -2283,10 +2441,11 @@ impl Lu {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredSeventyFive => uncertain!(174.9407752, 0.0000020),
-            Self::OneHundredSeventySix => uncertain!(175.9426897, 0.0000020),
+            Self::OneHundredSeventyFive => uncertain!(174.940_775_2, 0.000_002_0),
+            Self::OneHundredSeventySix => uncertain!(175.942_689_7, 0.000_002_0),
         }
     }
 }
@@ -2305,6 +2464,7 @@ pub enum Hf {
 
 impl Hf {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredSeventyFour => Some(uncertain!(0.0016, 0.0001)),
@@ -2317,6 +2477,7 @@ impl Hf {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredSeventyFour => 174,
@@ -2329,14 +2490,15 @@ impl Hf {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredSeventyFour => uncertain!(173.9400461, 0.0000028),
-            Self::OneHundredSeventySix => uncertain!(175.9414076, 0.0000022),
-            Self::OneHundredSeventySeven => uncertain!(176.9432277, 0.0000020),
-            Self::OneHundredSeventyEight => uncertain!(177.9437058, 0.0000020),
-            Self::OneHundredSeventyNine => uncertain!(178.9458232, 0.0000020),
-            Self::OneHundredEighty => uncertain!(179.9465570, 0.0000020),
+            Self::OneHundredSeventyFour => uncertain!(173.940_046_1, 0.000_002_8),
+            Self::OneHundredSeventySix => uncertain!(175.941_407_6, 0.000_002_2),
+            Self::OneHundredSeventySeven => uncertain!(176.943_227_7, 0.000_002_0),
+            Self::OneHundredSeventyEight => uncertain!(177.943_705_8, 0.000_002_0),
+            Self::OneHundredSeventyNine => uncertain!(178.945_823_2, 0.000_002_0),
+            Self::OneHundredEighty => uncertain!(179.946_557_0, 0.000_002_0),
         }
     }
 }
@@ -2351,14 +2513,16 @@ pub enum Ta {
 
 impl Ta {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredEighty => Some(uncertain!(0.0001201, 0.0000032)),
-            Self::OneHundredEightyOne => Some(uncertain!(0.9998799, 0.0000032)),
+            Self::OneHundredEighty => Some(uncertain!(0.000_120_1, 0.000_003_2)),
+            Self::OneHundredEightyOne => Some(uncertain!(0.999_879_9, 0.000_003_2)),
         }
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredEighty => 180,
@@ -2367,10 +2531,11 @@ impl Ta {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredEighty => uncertain!(179.9474648, 0.0000024),
-            Self::OneHundredEightyOne => uncertain!(180.9479958, 0.0000020),
+            Self::OneHundredEighty => uncertain!(179.947_464_8, 0.000_002_4),
+            Self::OneHundredEightyOne => uncertain!(180.947_995_8, 0.000_002_0),
         }
     }
 }
@@ -2388,6 +2553,7 @@ pub enum W {
 
 impl W {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredEighty => Some(uncertain!(0.0012, 0.0001)),
@@ -2399,6 +2565,7 @@ impl W {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredEighty => 180,
@@ -2410,13 +2577,14 @@ impl W {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredEighty => uncertain!(179.9467108, 0.0000020),
-            Self::OneHundredEightyTwo => uncertain!(181.94820394, 0.00000091),
-            Self::OneHundredEightyThree => uncertain!(182.95022275, 0.00000090),
-            Self::OneHundredEightyFour => uncertain!(183.95093092, 0.00000094),
-            Self::OneHundredEightySix => uncertain!(185.9543628, 0.0000017),
+            Self::OneHundredEighty => uncertain!(179.946_710_8, 0.000_002_0),
+            Self::OneHundredEightyTwo => uncertain!(181.948_203_94, 0.000_000_91),
+            Self::OneHundredEightyThree => uncertain!(182.950_222_75, 0.000_000_90),
+            Self::OneHundredEightyFour => uncertain!(183.950_930_92, 0.000_000_94),
+            Self::OneHundredEightySix => uncertain!(185.954_362_8, 0.000_001_7),
         }
     }
 }
@@ -2431,6 +2599,7 @@ pub enum Re {
 
 impl Re {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredEightyFive => Some(uncertain!(0.3740, 0.0002)),
@@ -2439,6 +2608,7 @@ impl Re {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredEightyFive => 185,
@@ -2447,10 +2617,11 @@ impl Re {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredEightyFive => uncertain!(184.9529545, 0.0000013),
-            Self::OneHundredEightySeven => uncertain!(186.9557501, 0.0000016),
+            Self::OneHundredEightyFive => uncertain!(184.952_954_5, 0.000_001_3),
+            Self::OneHundredEightySeven => uncertain!(186.955_750_1, 0.000_001_6),
         }
     }
 }
@@ -2470,6 +2641,7 @@ pub enum Os {
 
 impl Os {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredEightyFour => Some(uncertain!(0.0002, 0.0001)),
@@ -2483,6 +2655,7 @@ impl Os {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredEightyFour => 184,
@@ -2496,15 +2669,16 @@ impl Os {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredEightyFour => uncertain!(183.9524885, 0.0000014),
-            Self::OneHundredEightySix => uncertain!(185.9538350, 0.0000016),
-            Self::OneHundredEightySeven => uncertain!(186.9557474, 0.0000016),
-            Self::OneHundredEightyEight => uncertain!(187.9558352, 0.0000016),
-            Self::OneHundredEightyNine => uncertain!(188.9581442, 0.0000017),
-            Self::OneHundredNinety => uncertain!(189.9584437, 0.0000017),
-            Self::OneHundredNinetyTwo => uncertain!(191.9614770, 0.0000029),
+            Self::OneHundredEightyFour => uncertain!(183.952_488_5, 0.000_001_4),
+            Self::OneHundredEightySix => uncertain!(185.953_835_0, 0.000_001_6),
+            Self::OneHundredEightySeven => uncertain!(186.955_747_4, 0.000_001_6),
+            Self::OneHundredEightyEight => uncertain!(187.955_835_2, 0.000_001_6),
+            Self::OneHundredEightyNine => uncertain!(188.958_144_2, 0.000_001_7),
+            Self::OneHundredNinety => uncertain!(189.958_443_7, 0.000_001_7),
+            Self::OneHundredNinetyTwo => uncertain!(191.961_477_0, 0.000_002_9),
         }
     }
 }
@@ -2519,6 +2693,7 @@ pub enum Ir {
 
 impl Ir {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredNinetyOne => Some(uncertain!(0.373, 0.002)),
@@ -2527,6 +2702,7 @@ impl Ir {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredNinetyOne => 191,
@@ -2535,10 +2711,11 @@ impl Ir {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredNinetyOne => uncertain!(190.9605893, 0.0000021),
-            Self::OneHundredNinetyThree => uncertain!(192.9629216, 0.0000021),
+            Self::OneHundredNinetyOne => uncertain!(190.960_589_3, 0.000_002_1),
+            Self::OneHundredNinetyThree => uncertain!(192.962_921_6, 0.000_002_1),
         }
     }
 }
@@ -2557,6 +2734,7 @@ pub enum Pt {
 
 impl Pt {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredNinety => Some(uncertain!(0.00012, 0.00002)),
@@ -2569,6 +2747,7 @@ impl Pt {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredNinety => 190,
@@ -2581,14 +2760,15 @@ impl Pt {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredNinety => uncertain!(189.9599297, 0.0000063),
-            Self::OneHundredNinetyTwo => uncertain!(191.9610387, 0.0000032),
-            Self::OneHundredNinetyFour => uncertain!(193.9626809, 0.0000010),
-            Self::OneHundredNinetyFive => uncertain!(194.9647917, 0.0000010),
-            Self::OneHundredNinetySix => uncertain!(195.96495209, 0.00000099),
-            Self::OneHundredNinetyEight => uncertain!(197.9678949, 0.0000023),
+            Self::OneHundredNinety => uncertain!(189.959_929_7, 0.000_006_3),
+            Self::OneHundredNinetyTwo => uncertain!(191.961_038_7, 0.000_003_2),
+            Self::OneHundredNinetyFour => uncertain!(193.962_680_9, 0.000_001_0),
+            Self::OneHundredNinetyFive => uncertain!(194.964_791_7, 0.000_001_0),
+            Self::OneHundredNinetySix => uncertain!(195.964_952_09, 0.000_000_99),
+            Self::OneHundredNinetyEight => uncertain!(197.967_894_9, 0.000_002_3),
         }
     }
 }
@@ -2608,6 +2788,7 @@ pub enum Hg {
 
 impl Hg {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::OneHundredNinetySix => Some(uncertain!(0.0015, 0.0001)),
@@ -2621,6 +2802,7 @@ impl Hg {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::OneHundredNinetySix => 196,
@@ -2634,15 +2816,16 @@ impl Hg {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::OneHundredNinetySix => uncertain!(195.9658326, 0.0000032),
-            Self::OneHundredNinetyEight => uncertain!(197.96676860, 0.00000052),
-            Self::OneHundredNinetyNine => uncertain!(198.96828064, 0.00000046),
-            Self::TwoHundred => uncertain!(199.96832659, 0.00000047),
-            Self::TwoHundredOne => uncertain!(200.97030284, 0.00000069),
-            Self::TwoHundredTwo => uncertain!(201.97064340, 0.00000069),
-            Self::TwoHundredFour => uncertain!(203.97349398, 0.00000053),
+            Self::OneHundredNinetySix => uncertain!(195.965_832_6, 0.000_003_2),
+            Self::OneHundredNinetyEight => uncertain!(197.966_768_60, 0.000_000_52),
+            Self::OneHundredNinetyNine => uncertain!(198.968_280_64, 0.000_000_46),
+            Self::TwoHundred => uncertain!(199.968_326_59, 0.000_000_47),
+            Self::TwoHundredOne => uncertain!(200.970_302_84, 0.000_000_69),
+            Self::TwoHundredTwo => uncertain!(201.970_643_40, 0.000_000_69),
+            Self::TwoHundredFour => uncertain!(203.973_493_98, 0.000_000_53),
         }
     }
 }
@@ -2657,6 +2840,7 @@ pub enum Tl {
 
 impl Tl {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredThree => Some(uncertain!(0.2952, 0.0001)),
@@ -2665,6 +2849,7 @@ impl Tl {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredThree => 203,
@@ -2673,10 +2858,11 @@ impl Tl {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredThree => uncertain!(202.9723446, 0.0000014),
-            Self::TwoHundredFive => uncertain!(204.9744278, 0.0000014),
+            Self::TwoHundredThree => uncertain!(202.972_344_6, 0.000_001_4),
+            Self::TwoHundredFive => uncertain!(204.974_427_8, 0.000_001_4),
         }
     }
 }
@@ -2693,6 +2879,7 @@ pub enum Pb {
 
 impl Pb {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredFour => Some(uncertain!(0.014, 0.001)),
@@ -2703,6 +2890,7 @@ impl Pb {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredFour => 204,
@@ -2713,12 +2901,13 @@ impl Pb {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredFour => uncertain!(203.9730440, 0.0000013),
-            Self::TwoHundredSix => uncertain!(205.9744657, 0.0000013),
-            Self::TwoHundredSeven => uncertain!(206.9758973, 0.0000013),
-            Self::TwoHundredEight => uncertain!(207.9766525, 0.0000013),
+            Self::TwoHundredFour => uncertain!(203.973_044_0, 0.000_001_3),
+            Self::TwoHundredSix => uncertain!(205.974_465_7, 0.000_001_3),
+            Self::TwoHundredSeven => uncertain!(206.975_897_3, 0.000_001_3),
+            Self::TwoHundredEight => uncertain!(207.976_652_5, 0.000_001_3),
         }
     }
 }
@@ -2733,6 +2922,7 @@ pub enum Po {
 
 impl Po {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredNine => None,
@@ -2741,6 +2931,7 @@ impl Po {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredNine => 209,
@@ -2749,10 +2940,11 @@ impl Po {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredNine => uncertain!(208.9824308, 0.0000020),
-            Self::TwoHundredTen => uncertain!(209.9828741, 0.0000013),
+            Self::TwoHundredNine => uncertain!(208.982_430_8, 0.000_002_0),
+            Self::TwoHundredTen => uncertain!(209.982_874_1, 0.000_001_3),
         }
     }
 }
@@ -2767,6 +2959,7 @@ pub enum At {
 
 impl At {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredTen => None,
@@ -2775,6 +2968,7 @@ impl At {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredTen => 210,
@@ -2783,10 +2977,11 @@ impl At {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredTen => uncertain!(209.9871479, 0.0000083),
-            Self::TwoHundredEleven => uncertain!(210.9874966, 0.0000030),
+            Self::TwoHundredTen => uncertain!(209.987_147_9, 0.000_008_3),
+            Self::TwoHundredEleven => uncertain!(210.987_496_6, 0.000_003_0),
         }
     }
 }
@@ -2802,6 +2997,7 @@ pub enum Rn {
 
 impl Rn {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredEleven => None,
@@ -2811,6 +3007,7 @@ impl Rn {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredEleven => 211,
@@ -2820,11 +3017,12 @@ impl Rn {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredEleven => uncertain!(210.9906011, 0.0000073),
-            Self::TwoHundredTwenty => uncertain!(220.0113941, 0.0000023),
-            Self::TwoHundredTwentyTwo => uncertain!(222.0175782, 0.0000025),
+            Self::TwoHundredEleven => uncertain!(210.990_601_1, 0.000_007_3),
+            Self::TwoHundredTwenty => uncertain!(220.011_394_1, 0.000_002_3),
+            Self::TwoHundredTwentyTwo => uncertain!(222.017_578_2, 0.000_002_5),
         }
     }
 }
@@ -2841,6 +3039,7 @@ pub enum Ra {
 
 impl Ra {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredTwentyThree => None,
@@ -2851,6 +3050,7 @@ impl Ra {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredTwentyThree => 223,
@@ -2861,12 +3061,13 @@ impl Ra {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredTwentyThree => uncertain!(223.0185023, 0.0000027),
-            Self::TwoHundredTwentyFour => uncertain!(224.0202120, 0.0000023),
-            Self::TwoHundredTwentySix => uncertain!(226.0254103, 0.0000025),
-            Self::TwoHundredTwentyEight => uncertain!(228.0310707, 0.0000026),
+            Self::TwoHundredTwentyThree => uncertain!(223.018_502_3, 0.000_002_7),
+            Self::TwoHundredTwentyFour => uncertain!(224.020_212_0, 0.000_002_3),
+            Self::TwoHundredTwentySix => uncertain!(226.025_410_3, 0.000_002_5),
+            Self::TwoHundredTwentyEight => uncertain!(228.031_070_7, 0.000_002_6),
         }
     }
 }
@@ -2881,6 +3082,7 @@ pub enum Th {
 
 impl Th {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredThirty => None,
@@ -2889,6 +3091,7 @@ impl Th {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredThirty => 230,
@@ -2897,10 +3100,11 @@ impl Th {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredThirty => uncertain!(230.0331341, 0.0000019),
-            Self::TwoHundredThirtyTwo => uncertain!(232.0380558, 0.0000021),
+            Self::TwoHundredThirty => uncertain!(230.033_134_1, 0.000_001_9),
+            Self::TwoHundredThirtyTwo => uncertain!(232.038_055_8, 0.000_002_1),
         }
     }
 }
@@ -2918,17 +3122,19 @@ pub enum U {
 
 impl U {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredThirtyThree => None,
-            Self::TwoHundredThirtyFour => Some(uncertain!(0.000054, 0.000005)),
-            Self::TwoHundredThirtyFive => Some(uncertain!(0.007204, 0.000006)),
+            Self::TwoHundredThirtyFour => Some(uncertain!(0.000_054, 0.000_005)),
+            Self::TwoHundredThirtyFive => Some(uncertain!(0.007_204, 0.000_006)),
             Self::TwoHundredThirtySix => None,
-            Self::TwoHundredThirtyEight => Some(uncertain!(0.992742, 0.000010)),
+            Self::TwoHundredThirtyEight => Some(uncertain!(0.992_742, 0.000_010)),
         }
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredThirtyThree => 233,
@@ -2940,13 +3146,14 @@ impl U {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredThirtyThree => uncertain!(233.0396355, 0.0000029),
-            Self::TwoHundredThirtyFour => uncertain!(234.0409523, 0.0000019),
-            Self::TwoHundredThirtyFive => uncertain!(235.0439301, 0.0000019),
-            Self::TwoHundredThirtySix => uncertain!(236.0455682, 0.0000019),
-            Self::TwoHundredThirtyEight => uncertain!(238.0507884, 0.0000020),
+            Self::TwoHundredThirtyThree => uncertain!(233.039_635_5, 0.000_002_9),
+            Self::TwoHundredThirtyFour => uncertain!(234.040_952_3, 0.000_001_9),
+            Self::TwoHundredThirtyFive => uncertain!(235.043_930_1, 0.000_001_9),
+            Self::TwoHundredThirtySix => uncertain!(236.045_568_2, 0.000_001_9),
+            Self::TwoHundredThirtyEight => uncertain!(238.050_788_4, 0.000_002_0),
         }
     }
 }
@@ -2961,6 +3168,7 @@ pub enum Np {
 
 impl Np {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredThirtySix => None,
@@ -2969,6 +3177,7 @@ impl Np {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredThirtySix => 236,
@@ -2977,10 +3186,11 @@ impl Np {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredThirtySix => uncertain!(236.046570, 0.000054),
-            Self::TwoHundredThirtySeven => uncertain!(237.0481736, 0.0000019),
+            Self::TwoHundredThirtySix => uncertain!(236.046_570, 0.000_054),
+            Self::TwoHundredThirtySeven => uncertain!(237.048_173_6, 0.000_001_9),
         }
     }
 }
@@ -2999,6 +3209,7 @@ pub enum Pu {
 
 impl Pu {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredThirtyEight => None,
@@ -3011,6 +3222,7 @@ impl Pu {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredThirtyEight => 238,
@@ -3023,14 +3235,15 @@ impl Pu {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredThirtyEight => uncertain!(238.0495601, 0.0000019),
-            Self::TwoHundredThirtyNine => uncertain!(239.0521636, 0.0000019),
-            Self::TwoHundredForty => uncertain!(240.0538138, 0.0000019),
-            Self::TwoHundredFortyOne => uncertain!(241.0568517, 0.0000019),
-            Self::TwoHundredFortyTwo => uncertain!(242.0587428, 0.0000020),
-            Self::TwoHundredFortyFour => uncertain!(244.0642053, 0.0000056),
+            Self::TwoHundredThirtyEight => uncertain!(238.049_560_1, 0.000_001_9),
+            Self::TwoHundredThirtyNine => uncertain!(239.052_163_6, 0.000_001_9),
+            Self::TwoHundredForty => uncertain!(240.053_813_8, 0.000_001_9),
+            Self::TwoHundredFortyOne => uncertain!(241.056_851_7, 0.000_001_9),
+            Self::TwoHundredFortyTwo => uncertain!(242.058_742_8, 0.000_002_0),
+            Self::TwoHundredFortyFour => uncertain!(244.064_205_3, 0.000_005_6),
         }
     }
 }
@@ -3045,6 +3258,7 @@ pub enum Am {
 
 impl Am {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredFortyOne => None,
@@ -3053,6 +3267,7 @@ impl Am {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredFortyOne => 241,
@@ -3061,10 +3276,11 @@ impl Am {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredFortyOne => uncertain!(241.0568293, 0.0000019),
-            Self::TwoHundredFortyThree => uncertain!(243.0613813, 0.0000024),
+            Self::TwoHundredFortyOne => uncertain!(241.056_829_3, 0.000_001_9),
+            Self::TwoHundredFortyThree => uncertain!(243.061_381_3, 0.000_002_4),
         }
     }
 }
@@ -3083,6 +3299,7 @@ pub enum Cm {
 
 impl Cm {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredFortyThree => None,
@@ -3095,6 +3312,7 @@ impl Cm {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredFortyThree => 243,
@@ -3107,14 +3325,15 @@ impl Cm {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredFortyThree => uncertain!(243.0613893, 0.0000022),
-            Self::TwoHundredFortyFour => uncertain!(244.0627528, 0.0000019),
-            Self::TwoHundredFortyFive => uncertain!(245.0654915, 0.0000022),
-            Self::TwoHundredFortySix => uncertain!(246.0672238, 0.0000022),
-            Self::TwoHundredFortySeven => uncertain!(247.0703541, 0.0000047),
-            Self::TwoHundredFortyEight => uncertain!(248.0723499, 0.0000056),
+            Self::TwoHundredFortyThree => uncertain!(243.061_389_3, 0.000_002_2),
+            Self::TwoHundredFortyFour => uncertain!(244.062_752_8, 0.000_001_9),
+            Self::TwoHundredFortyFive => uncertain!(245.065_491_5, 0.000_002_2),
+            Self::TwoHundredFortySix => uncertain!(246.067_223_8, 0.000_002_2),
+            Self::TwoHundredFortySeven => uncertain!(247.070_354_1, 0.000_004_7),
+            Self::TwoHundredFortyEight => uncertain!(248.072_349_9, 0.000_005_6),
         }
     }
 }
@@ -3129,6 +3348,7 @@ pub enum Bk {
 
 impl Bk {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredFortySeven => None,
@@ -3137,6 +3357,7 @@ impl Bk {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredFortySeven => 247,
@@ -3145,10 +3366,11 @@ impl Bk {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredFortySeven => uncertain!(247.0703073, 0.0000059),
-            Self::TwoHundredFortyNine => uncertain!(249.0749877, 0.0000027),
+            Self::TwoHundredFortySeven => uncertain!(247.070_307_3, 0.000_005_9),
+            Self::TwoHundredFortyNine => uncertain!(249.074_987_7, 0.000_002_7),
         }
     }
 }
@@ -3165,6 +3387,7 @@ pub enum Cf {
 
 impl Cf {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredFortyNine => None,
@@ -3175,6 +3398,7 @@ impl Cf {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredFortyNine => 249,
@@ -3185,12 +3409,13 @@ impl Cf {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredFortyNine => uncertain!(249.0748539, 0.0000023),
-            Self::TwoHundredFifty => uncertain!(250.0764062, 0.0000022),
-            Self::TwoHundredFiftyOne => uncertain!(251.0795886, 0.0000048),
-            Self::TwoHundredFiftyTwo => uncertain!(252.0816272, 0.0000056),
+            Self::TwoHundredFortyNine => uncertain!(249.074_853_9, 0.000_002_3),
+            Self::TwoHundredFifty => uncertain!(250.076_406_2, 0.000_002_2),
+            Self::TwoHundredFiftyOne => uncertain!(251.079_588_6, 0.000_004_8),
+            Self::TwoHundredFiftyTwo => uncertain!(252.081_627_2, 0.000_005_6),
         }
     }
 }
@@ -3205,6 +3430,7 @@ pub enum Md {
 
 impl Md {
     /// Isotopic composition
+    #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
             Self::TwoHundredFiftyEight => None,
@@ -3213,6 +3439,7 @@ impl Md {
     }
 
     /// Mass number
+    #[must_use]
     pub const fn mass_number(&self) -> usize {
         match self {
             Self::TwoHundredFiftyEight => 258,
@@ -3221,9 +3448,10 @@ impl Md {
     }
 
     /// Relative Atomic Mass
+    #[must_use]
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
-            Self::TwoHundredFiftyEight => uncertain!(258.0984315, 0.0000050),
+            Self::TwoHundredFiftyEight => uncertain!(258.098_431_5, 0.000_005_0),
             Self::TwoHundredSixty => uncertain!(260.10365, 0.00034),
         }
     }
