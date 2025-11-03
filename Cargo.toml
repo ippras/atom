@@ -1,16 +1,16 @@
 [package]
 edition = "2021"
 name = "atom"
-version = "0.0.3"
+version = "0.0.4"
 
 [dependencies]
-derive_more = { version = "1.0.0-beta.6", default-features = false, features = [
+derive_more = { version = "2.0.1", default-features = false, features = [
     "from",
 ] }
-serde = { version = "1.0.193", features = ["derive"], optional = true }
-strum = { version = "0.25.0", features = ["derive"] }
-thiserror = "1.0.50"
-indexmap = "2.1.0"
+serde = { version = "1.0.228", features = ["derive"], optional = true }
+strum = { version = "0.27.2", features = ["derive"] }
+thiserror = "2.0.17"
+indexmap = "2.12.0"
 
 [features]
 default = ["nist"]
