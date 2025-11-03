@@ -1,3 +1,4 @@
+use self::Isotope::*;
 use crate::{
     isotopes::{
         Ac, Ag, Al, Am, Ar, As, At, Au, Ba, Be, Bh, Bi, Bk, Br, Ca, Cd, Ce, Cf, Cl, Cm, Cn, Co, Cr,

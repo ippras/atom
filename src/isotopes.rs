@@ -1,5 +1,3 @@
-pub use crate::Isotope::*;
-
 use crate::{uncertain, Uncertain};
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
