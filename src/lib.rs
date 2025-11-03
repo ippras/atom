@@ -11,6 +11,18 @@ pub use self::{
 #[cfg(feature = "nist")]
 pub mod isotopes;
 
+pub mod prelude {
+    #[cfg(feature = "nist")]
+    pub use crate::isotope::Isotope;
+    #[cfg(feature = "nist")]
+    pub use crate::isotopes;
+    pub use crate::{
+        element::{Element, ELEMENTS},
+        error::{Error, Result},
+        uncertain::{uncertain, Uncertain},
+    };
+}
+
 mod element;
 mod error;
 #[cfg(feature = "nist")]
