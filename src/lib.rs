@@ -1,5 +1,4 @@
 #![feature(decl_macro)]
-#![feature(const_fn_floating_point_arithmetic)]
 
 #[cfg(feature = "nist")]
 pub use self::isotope::Isotope;

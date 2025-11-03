@@ -12,7 +12,7 @@ use crate::{
 impl Element {
     /// Standard atomic weight
     ///
-    /// Relative atomic mass of the element
+    /// Standard atomic weight of the element
     #[must_use]
     pub const fn standard_atomic_weight(&self) -> Option<Uncertain> {
         match self {
