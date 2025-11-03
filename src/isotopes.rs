@@ -96,8 +96,8 @@ impl Li {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::Six => Some(uncertain!(0.0759, 0.0004)),
-            Self::Seven => Some(uncertain!(0.9241, 0.0004)),
+            Self::Six => Some(uncertain!(0.075_9, 0.000_4)),
+            Self::Seven => Some(uncertain!(0.924_1, 0.000_4)),
         }
     }
 
@@ -117,6 +117,33 @@ impl Li {
             Self::Six => uncertain!(6.015_122_887_4, 0.000_000_001_6),
             Self::Seven => uncertain!(7.016_003_436_6, 0.000_000_004_5),
         }
+    }
+}
+
+/// Be isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Be {
+    Nine,
+}
+
+impl Be {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        9
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(9.012_183_065, 0.000_000_082)
     }
 }
 
@@ -171,8 +198,8 @@ impl C {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::Twelve => Some(uncertain!(0.9893, 0.0008)),
-            Self::Thirteen => Some(uncertain!(0.0107, 0.0008)),
+            Self::Twelve => Some(uncertain!(0.989_3, 0.000_8)),
+            Self::Thirteen => Some(uncertain!(0.010_7, 0.000_8)),
             Self::Fourteen => None,
         }
     }
@@ -211,8 +238,8 @@ impl N {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::Fourteen => Some(uncertain!(0.99636, 0.00020)),
-            Self::Fifteen => Some(uncertain!(0.00364, 0.00020)),
+            Self::Fourteen => Some(uncertain!(0.996_36, 0.000_20)),
+            Self::Fifteen => Some(uncertain!(0.003_64, 0.000_20)),
         }
     }
 
@@ -249,9 +276,9 @@ impl O {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::Sixteen => Some(uncertain!(0.99757, 0.00016)),
-            Self::Seventeen => Some(uncertain!(0.00038, 0.00001)),
-            Self::Eighteen => Some(uncertain!(0.00205, 0.00014)),
+            Self::Sixteen => Some(uncertain!(0.997_57, 0.000_16)),
+            Self::Seventeen => Some(uncertain!(0.000_38, 0.000_01)),
+            Self::Eighteen => Some(uncertain!(0.002_05, 0.000_14)),
         }
     }
 
@@ -276,6 +303,33 @@ impl O {
     }
 }
 
+/// F isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum F {
+    Nineteen,
+}
+
+impl F {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        19
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(18.998_403_162_73, 0.000_000_000_92)
+    }
+}
+
 /// Ne isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -290,9 +344,9 @@ impl Ne {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::Twenty => Some(uncertain!(0.9048, 0.0003)),
-            Self::TwentyOne => Some(uncertain!(0.0027, 0.0001)),
-            Self::TwentyTwo => Some(uncertain!(0.0925, 0.0003)),
+            Self::Twenty => Some(uncertain!(0.904_8, 0.000_3)),
+            Self::TwentyOne => Some(uncertain!(0.002_7, 0.000_1)),
+            Self::TwentyTwo => Some(uncertain!(0.092_5, 0.000_3)),
         }
     }
 
@@ -317,6 +371,33 @@ impl Ne {
     }
 }
 
+/// Na isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Na {
+    TwentyThree,
+}
+
+impl Na {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        23
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(22.989_769_282_0, 0.000_000_001_9)
+    }
+}
+
 /// Mg isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -331,9 +412,9 @@ impl Mg {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::TwentyFour => Some(uncertain!(0.7899, 0.0004)),
-            Self::TwentyFive => Some(uncertain!(0.1000, 0.0001)),
-            Self::TwentySix => Some(uncertain!(0.1101, 0.0003)),
+            Self::TwentyFour => Some(uncertain!(0.789_9, 0.000_4)),
+            Self::TwentyFive => Some(uncertain!(0.100_0, 0.000_1)),
+            Self::TwentySix => Some(uncertain!(0.110_1, 0.000_3)),
         }
     }
 
@@ -358,6 +439,33 @@ impl Mg {
     }
 }
 
+/// Al isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Al {
+    TwentySeven,
+}
+
+impl Al {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        27
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(26.981_538_53, 0.000_000_11)
+    }
+}
+
 /// Si isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -372,9 +480,9 @@ impl Si {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::TwentyEight => Some(uncertain!(0.92223, 0.00019)),
-            Self::TwentyNine => Some(uncertain!(0.04685, 0.00008)),
-            Self::Thirty => Some(uncertain!(0.03092, 0.00011)),
+            Self::TwentyEight => Some(uncertain!(0.922_23, 0.000_19)),
+            Self::TwentyNine => Some(uncertain!(0.046_85, 0.000_08)),
+            Self::Thirty => Some(uncertain!(0.030_92, 0.000_11)),
         }
     }
 
@@ -399,6 +507,33 @@ impl Si {
     }
 }
 
+/// P isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum P {
+    ThirtyOne,
+}
+
+impl P {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        31
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(30.973_761_998_42, 0.000_000_000_70)
+    }
+}
+
 /// S isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -414,10 +549,10 @@ impl S {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::ThirtyTwo => Some(uncertain!(0.9499, 0.0026)),
-            Self::ThirtyThree => Some(uncertain!(0.0075, 0.0002)),
-            Self::ThirtyFour => Some(uncertain!(0.0425, 0.0024)),
-            Self::ThirtySix => Some(uncertain!(0.0001, 0.0001)),
+            Self::ThirtyTwo => Some(uncertain!(0.949_9, 0.002_6)),
+            Self::ThirtyThree => Some(uncertain!(0.007_5, 0.000_2)),
+            Self::ThirtyFour => Some(uncertain!(0.042_5, 0.002_4)),
+            Self::ThirtySix => Some(uncertain!(0.000_1, 0.000_1)),
         }
     }
 
@@ -457,8 +592,8 @@ impl Cl {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::ThirtyFive => Some(uncertain!(0.7576, 0.0010)),
-            Self::ThirtySeven => Some(uncertain!(0.2424, 0.0010)),
+            Self::ThirtyFive => Some(uncertain!(0.757_6, 0.001_0)),
+            Self::ThirtySeven => Some(uncertain!(0.242_4, 0.001_0)),
         }
     }
 
@@ -580,12 +715,12 @@ impl Ca {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::Forty => Some(uncertain!(0.96941, 0.00156)),
-            Self::FortyTwo => Some(uncertain!(0.00647, 0.00023)),
-            Self::FortyThree => Some(uncertain!(0.00135, 0.00010)),
-            Self::FortyFour => Some(uncertain!(0.02086, 0.00110)),
-            Self::FortySix => Some(uncertain!(0.00004, 0.00003)),
-            Self::FortyEight => Some(uncertain!(0.00187, 0.00021)),
+            Self::Forty => Some(uncertain!(0.969_41, 0.001_56)),
+            Self::FortyTwo => Some(uncertain!(0.006_47, 0.000_23)),
+            Self::FortyThree => Some(uncertain!(0.001_35, 0.000_10)),
+            Self::FortyFour => Some(uncertain!(0.020_86, 0.001_10)),
+            Self::FortySix => Some(uncertain!(0.000_04, 0.000_03)),
+            Self::FortyEight => Some(uncertain!(0.001_87, 0.000_21)),
         }
     }
 
@@ -616,6 +751,33 @@ impl Ca {
     }
 }
 
+/// Sc isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Sc {
+    FortyFive,
+}
+
+impl Sc {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        45
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(44.955_908_28, 0.000_000_77)
+    }
+}
+
 /// Ti isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -632,11 +794,11 @@ impl Ti {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::FortySix => Some(uncertain!(0.0825, 0.0003)),
-            Self::FortySeven => Some(uncertain!(0.0744, 0.0002)),
-            Self::FortyEight => Some(uncertain!(0.7372, 0.0003)),
-            Self::FortyNine => Some(uncertain!(0.0541, 0.0002)),
-            Self::Fifty => Some(uncertain!(0.0518, 0.0002)),
+            Self::FortySix => Some(uncertain!(0.082_5, 0.000_3)),
+            Self::FortySeven => Some(uncertain!(0.074_4, 0.000_2)),
+            Self::FortyEight => Some(uncertain!(0.737_2, 0.000_3)),
+            Self::FortyNine => Some(uncertain!(0.054_1, 0.000_2)),
+            Self::Fifty => Some(uncertain!(0.051_8, 0.000_2)),
         }
     }
 
@@ -678,8 +840,8 @@ impl V {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::Fifty => Some(uncertain!(0.00250, 0.00004)),
-            Self::FiftyOne => Some(uncertain!(0.99750, 0.00004)),
+            Self::Fifty => Some(uncertain!(0.002_50, 0.000_04)),
+            Self::FiftyOne => Some(uncertain!(0.997_50, 0.000_04)),
         }
     }
 
@@ -717,10 +879,10 @@ impl Cr {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::Fifty => Some(uncertain!(0.04345, 0.00013)),
-            Self::FiftyTwo => Some(uncertain!(0.83789, 0.00018)),
-            Self::FiftyThree => Some(uncertain!(0.09501, 0.00017)),
-            Self::FiftyFour => Some(uncertain!(0.02365, 0.00007)),
+            Self::Fifty => Some(uncertain!(0.043_45, 0.000_13)),
+            Self::FiftyTwo => Some(uncertain!(0.837_89, 0.000_18)),
+            Self::FiftyThree => Some(uncertain!(0.095_01, 0.000_17)),
+            Self::FiftyFour => Some(uncertain!(0.023_65, 0.000_07)),
         }
     }
 
@@ -747,6 +909,33 @@ impl Cr {
     }
 }
 
+/// Mn isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Mn {
+    FiftyFive,
+}
+
+impl Mn {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        55
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(54.938_043_91, 0.000_000_48)
+    }
+}
+
 /// Fe isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -762,10 +951,10 @@ impl Fe {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::FiftyFour => Some(uncertain!(0.05845, 0.00035)),
-            Self::FiftySix => Some(uncertain!(0.91754, 0.00036)),
-            Self::FiftySeven => Some(uncertain!(0.02119, 0.00010)),
-            Self::FiftyEight => Some(uncertain!(0.00282, 0.00004)),
+            Self::FiftyFour => Some(uncertain!(0.058_45, 0.000_35)),
+            Self::FiftySix => Some(uncertain!(0.917_54, 0.000_36)),
+            Self::FiftySeven => Some(uncertain!(0.021_19, 0.000_10)),
+            Self::FiftyEight => Some(uncertain!(0.002_82, 0.000_04)),
         }
     }
 
@@ -792,6 +981,33 @@ impl Fe {
     }
 }
 
+/// Co isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Co {
+    FiftyNine,
+}
+
+impl Co {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        59
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(58.933_194_29, 0.000_000_56)
+    }
+}
+
 /// Ni isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -808,8 +1024,8 @@ impl Ni {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::FiftyEight => Some(uncertain!(0.68077, 0.00019)),
-            Self::Sixty => Some(uncertain!(0.26223, 0.00015)),
+            Self::FiftyEight => Some(uncertain!(0.680_77, 0.000_19)),
+            Self::Sixty => Some(uncertain!(0.262_23, 0.000_15)),
             Self::SixtyOne => Some(uncertain!(0.011_399, 0.000_013)),
             Self::SixtyTwo => Some(uncertain!(0.036_346, 0.000_040)),
             Self::SixtyFour => Some(uncertain!(0.009_255, 0.000_019)),
@@ -854,8 +1070,8 @@ impl Cu {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::SixtyThree => Some(uncertain!(0.6915, 0.0015)),
-            Self::SixtyFive => Some(uncertain!(0.3085, 0.0015)),
+            Self::SixtyThree => Some(uncertain!(0.691_5, 0.001_5)),
+            Self::SixtyFive => Some(uncertain!(0.308_5, 0.001_5)),
         }
     }
 
@@ -894,11 +1110,11 @@ impl Zn {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::SixtyFour => Some(uncertain!(0.4917, 0.0075)),
-            Self::SixtySix => Some(uncertain!(0.2773, 0.0098)),
-            Self::SixtySeven => Some(uncertain!(0.0404, 0.0016)),
-            Self::SixtyEight => Some(uncertain!(0.1845, 0.0063)),
-            Self::Seventy => Some(uncertain!(0.0061, 0.0010)),
+            Self::SixtyFour => Some(uncertain!(0.491_7, 0.007_5)),
+            Self::SixtySix => Some(uncertain!(0.277_3, 0.009_8)),
+            Self::SixtySeven => Some(uncertain!(0.040_4, 0.001_6)),
+            Self::SixtyEight => Some(uncertain!(0.184_5, 0.006_3)),
+            Self::Seventy => Some(uncertain!(0.006_1, 0.001_0)),
         }
     }
 
@@ -940,8 +1156,8 @@ impl Ga {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::SixtyNine => Some(uncertain!(0.60108, 0.00009)),
-            Self::SeventyOne => Some(uncertain!(0.39892, 0.00009)),
+            Self::SixtyNine => Some(uncertain!(0.601_08, 0.000_09)),
+            Self::SeventyOne => Some(uncertain!(0.398_92, 0.000_09)),
         }
     }
 
@@ -980,11 +1196,11 @@ impl Ge {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::Seventy => Some(uncertain!(0.2057, 0.0027)),
-            Self::SeventyTwo => Some(uncertain!(0.2745, 0.0032)),
-            Self::SeventyThree => Some(uncertain!(0.0775, 0.0012)),
-            Self::SeventyFour => Some(uncertain!(0.3650, 0.0020)),
-            Self::SeventySix => Some(uncertain!(0.0773, 0.0012)),
+            Self::Seventy => Some(uncertain!(0.205_7, 0.002_7)),
+            Self::SeventyTwo => Some(uncertain!(0.274_5, 0.003_2)),
+            Self::SeventyThree => Some(uncertain!(0.077_5, 0.001_2)),
+            Self::SeventyFour => Some(uncertain!(0.365_0, 0.002_0)),
+            Self::SeventySix => Some(uncertain!(0.077_3, 0.001_2)),
         }
     }
 
@@ -1013,6 +1229,33 @@ impl Ge {
     }
 }
 
+/// As isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum As {
+    SeventyFive,
+}
+
+impl As {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        75
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(74.921_594_57, 0.000_000_95)
+    }
+}
+
 /// Se isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -1030,12 +1273,12 @@ impl Se {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::SeventyFour => Some(uncertain!(0.0089, 0.0004)),
-            Self::SeventySix => Some(uncertain!(0.0937, 0.0029)),
-            Self::SeventySeven => Some(uncertain!(0.0763, 0.0016)),
-            Self::SeventyEight => Some(uncertain!(0.2377, 0.0028)),
-            Self::Eighty => Some(uncertain!(0.4961, 0.0041)),
-            Self::EightyTwo => Some(uncertain!(0.0873, 0.0022)),
+            Self::SeventyFour => Some(uncertain!(0.008_9, 0.000_4)),
+            Self::SeventySix => Some(uncertain!(0.093_7, 0.002_9)),
+            Self::SeventySeven => Some(uncertain!(0.076_3, 0.001_6)),
+            Self::SeventyEight => Some(uncertain!(0.237_7, 0.002_8)),
+            Self::Eighty => Some(uncertain!(0.496_1, 0.004_1)),
+            Self::EightyTwo => Some(uncertain!(0.087_3, 0.002_2)),
         }
     }
 
@@ -1079,8 +1322,8 @@ impl Br {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::SeventyNine => Some(uncertain!(0.5069, 0.0007)),
-            Self::EightyOne => Some(uncertain!(0.4931, 0.0007)),
+            Self::SeventyNine => Some(uncertain!(0.506_9, 0.000_7)),
+            Self::EightyOne => Some(uncertain!(0.493_1, 0.000_7)),
         }
     }
 
@@ -1120,12 +1363,12 @@ impl Kr {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::SeventyEight => Some(uncertain!(0.00355, 0.00003)),
-            Self::Eighty => Some(uncertain!(0.02286, 0.00010)),
-            Self::EightyTwo => Some(uncertain!(0.11593, 0.00031)),
-            Self::EightyThree => Some(uncertain!(0.11500, 0.00019)),
-            Self::EightyFour => Some(uncertain!(0.56987, 0.00015)),
-            Self::EightySix => Some(uncertain!(0.17279, 0.00041)),
+            Self::SeventyEight => Some(uncertain!(0.003_55, 0.000_03)),
+            Self::Eighty => Some(uncertain!(0.022_86, 0.000_10)),
+            Self::EightyTwo => Some(uncertain!(0.115_93, 0.000_31)),
+            Self::EightyThree => Some(uncertain!(0.115_00, 0.000_19)),
+            Self::EightyFour => Some(uncertain!(0.569_87, 0.000_15)),
+            Self::EightySix => Some(uncertain!(0.172_79, 0.000_41)),
         }
     }
 
@@ -1169,8 +1412,8 @@ impl Rb {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::EightyFive => Some(uncertain!(0.7217, 0.0002)),
-            Self::EightySeven => Some(uncertain!(0.2783, 0.0002)),
+            Self::EightyFive => Some(uncertain!(0.721_7, 0.000_2)),
+            Self::EightySeven => Some(uncertain!(0.278_3, 0.000_2)),
         }
     }
 
@@ -1208,10 +1451,10 @@ impl Sr {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::EightyFour => Some(uncertain!(0.0056, 0.0001)),
-            Self::EightySix => Some(uncertain!(0.0986, 0.0001)),
-            Self::EightySeven => Some(uncertain!(0.0700, 0.0001)),
-            Self::EightyEight => Some(uncertain!(0.8258, 0.0001)),
+            Self::EightyFour => Some(uncertain!(0.005_6, 0.000_1)),
+            Self::EightySix => Some(uncertain!(0.098_6, 0.000_1)),
+            Self::EightySeven => Some(uncertain!(0.070_0, 0.000_1)),
+            Self::EightyEight => Some(uncertain!(0.825_8, 0.000_1)),
         }
     }
 
@@ -1238,6 +1481,33 @@ impl Sr {
     }
 }
 
+/// Y isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Y {
+    EightyNine,
+}
+
+impl Y {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        89
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(88.905_840_3, 0.000_002_4)
+    }
+}
+
 /// Zr isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -1254,11 +1524,11 @@ impl Zr {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::Ninety => Some(uncertain!(0.5145, 0.0040)),
-            Self::NinetyOne => Some(uncertain!(0.1122, 0.0005)),
-            Self::NinetyTwo => Some(uncertain!(0.1715, 0.0008)),
-            Self::NinetyFour => Some(uncertain!(0.1738, 0.0028)),
-            Self::NinetySix => Some(uncertain!(0.0280, 0.0009)),
+            Self::Ninety => Some(uncertain!(0.514_5, 0.004_0)),
+            Self::NinetyOne => Some(uncertain!(0.112_2, 0.000_5)),
+            Self::NinetyTwo => Some(uncertain!(0.171_5, 0.000_8)),
+            Self::NinetyFour => Some(uncertain!(0.173_8, 0.002_8)),
+            Self::NinetySix => Some(uncertain!(0.028_0, 0.000_9)),
         }
     }
 
@@ -1287,6 +1557,33 @@ impl Zr {
     }
 }
 
+/// Nb isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Nb {
+    NinetyThree,
+}
+
+impl Nb {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        93
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(92.906_373_0, 0.000_002_0)
+    }
+}
+
 /// Mo isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -1305,13 +1602,13 @@ impl Mo {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::NinetyTwo => Some(uncertain!(0.1453, 0.0030)),
-            Self::NinetyFour => Some(uncertain!(0.0915, 0.0009)),
-            Self::NinetyFive => Some(uncertain!(0.1584, 0.0011)),
-            Self::NinetySix => Some(uncertain!(0.1667, 0.0015)),
-            Self::NinetySeven => Some(uncertain!(0.0960, 0.0014)),
-            Self::NinetyEight => Some(uncertain!(0.2439, 0.0037)),
-            Self::OneHundred => Some(uncertain!(0.0982, 0.0031)),
+            Self::NinetyTwo => Some(uncertain!(0.145_3, 0.003_0)),
+            Self::NinetyFour => Some(uncertain!(0.091_5, 0.000_9)),
+            Self::NinetyFive => Some(uncertain!(0.158_4, 0.001_1)),
+            Self::NinetySix => Some(uncertain!(0.166_7, 0.001_5)),
+            Self::NinetySeven => Some(uncertain!(0.096_0, 0.001_4)),
+            Self::NinetyEight => Some(uncertain!(0.243_9, 0.003_7)),
+            Self::OneHundred => Some(uncertain!(0.098_2, 0.003_1)),
         }
     }
 
@@ -1403,13 +1700,13 @@ impl Ru {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::NinetySix => Some(uncertain!(0.0554, 0.0014)),
-            Self::NinetyEight => Some(uncertain!(0.0187, 0.0003)),
-            Self::NinetyNine => Some(uncertain!(0.1276, 0.0014)),
-            Self::OneHundred => Some(uncertain!(0.1260, 0.0007)),
-            Self::OneHundredOne => Some(uncertain!(0.1706, 0.0002)),
-            Self::OneHundredTwo => Some(uncertain!(0.3155, 0.0014)),
-            Self::OneHundredFour => Some(uncertain!(0.1862, 0.0027)),
+            Self::NinetySix => Some(uncertain!(0.055_4, 0.001_4)),
+            Self::NinetyEight => Some(uncertain!(0.018_7, 0.000_3)),
+            Self::NinetyNine => Some(uncertain!(0.127_6, 0.001_4)),
+            Self::OneHundred => Some(uncertain!(0.126_0, 0.000_7)),
+            Self::OneHundredOne => Some(uncertain!(0.170_6, 0.000_2)),
+            Self::OneHundredTwo => Some(uncertain!(0.315_5, 0.001_4)),
+            Self::OneHundredFour => Some(uncertain!(0.186_2, 0.002_7)),
         }
     }
 
@@ -1442,6 +1739,33 @@ impl Ru {
     }
 }
 
+/// Rh isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Rh {
+    OneHundredThree,
+}
+
+impl Rh {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        103
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(102.905_498_0, 0.000_002_6)
+    }
+}
+
 /// Pd isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -1459,12 +1783,12 @@ impl Pd {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredTwo => Some(uncertain!(0.0102, 0.0001)),
-            Self::OneHundredFour => Some(uncertain!(0.1114, 0.0008)),
-            Self::OneHundredFive => Some(uncertain!(0.2233, 0.0008)),
-            Self::OneHundredSix => Some(uncertain!(0.2733, 0.0003)),
-            Self::OneHundredEight => Some(uncertain!(0.2646, 0.0009)),
-            Self::OneHundredTen => Some(uncertain!(0.1172, 0.0009)),
+            Self::OneHundredTwo => Some(uncertain!(0.010_2, 0.000_1)),
+            Self::OneHundredFour => Some(uncertain!(0.111_4, 0.000_8)),
+            Self::OneHundredFive => Some(uncertain!(0.223_3, 0.000_8)),
+            Self::OneHundredSix => Some(uncertain!(0.273_3, 0.000_3)),
+            Self::OneHundredEight => Some(uncertain!(0.264_6, 0.000_9)),
+            Self::OneHundredTen => Some(uncertain!(0.117_2, 0.000_9)),
         }
     }
 
@@ -1508,8 +1832,8 @@ impl Ag {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredSeven => Some(uncertain!(0.51839, 0.00008)),
-            Self::OneHundredNine => Some(uncertain!(0.48161, 0.00008)),
+            Self::OneHundredSeven => Some(uncertain!(0.518_39, 0.000_08)),
+            Self::OneHundredNine => Some(uncertain!(0.481_61, 0.000_08)),
         }
     }
 
@@ -1551,14 +1875,14 @@ impl Cd {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredSix => Some(uncertain!(0.0125, 0.0006)),
-            Self::OneHundredEight => Some(uncertain!(0.0089, 0.0003)),
-            Self::OneHundredTen => Some(uncertain!(0.1249, 0.0018)),
-            Self::OneHundredEleven => Some(uncertain!(0.1280, 0.0012)),
-            Self::OneHundredTwelve => Some(uncertain!(0.2413, 0.0021)),
-            Self::OneHundredThirteen => Some(uncertain!(0.1222, 0.0012)),
-            Self::OneHundredFourteen => Some(uncertain!(0.2873, 0.0042)),
-            Self::OneHundredSixteen => Some(uncertain!(0.0749, 0.0018)),
+            Self::OneHundredSix => Some(uncertain!(0.012_5, 0.000_6)),
+            Self::OneHundredEight => Some(uncertain!(0.008_9, 0.000_3)),
+            Self::OneHundredTen => Some(uncertain!(0.124_9, 0.001_8)),
+            Self::OneHundredEleven => Some(uncertain!(0.128_0, 0.001_2)),
+            Self::OneHundredTwelve => Some(uncertain!(0.241_3, 0.002_1)),
+            Self::OneHundredThirteen => Some(uncertain!(0.122_2, 0.001_2)),
+            Self::OneHundredFourteen => Some(uncertain!(0.287_3, 0.004_2)),
+            Self::OneHundredSixteen => Some(uncertain!(0.074_9, 0.001_8)),
         }
     }
 
@@ -1606,8 +1930,8 @@ impl In {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredThirteen => Some(uncertain!(0.0429, 0.0005)),
-            Self::OneHundredFifteen => Some(uncertain!(0.9571, 0.0005)),
+            Self::OneHundredThirteen => Some(uncertain!(0.042_9, 0.000_5)),
+            Self::OneHundredFifteen => Some(uncertain!(0.957_1, 0.000_5)),
         }
     }
 
@@ -1651,16 +1975,16 @@ impl Sn {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredTwelve => Some(uncertain!(0.0097, 0.0001)),
-            Self::OneHundredFourteen => Some(uncertain!(0.0066, 0.0001)),
-            Self::OneHundredFifteen => Some(uncertain!(0.0034, 0.0001)),
-            Self::OneHundredSixteen => Some(uncertain!(0.1454, 0.0009)),
-            Self::OneHundredSeventeen => Some(uncertain!(0.0768, 0.0007)),
-            Self::OneHundredEighteen => Some(uncertain!(0.2422, 0.0009)),
-            Self::OneHundredNineteen => Some(uncertain!(0.0859, 0.0004)),
-            Self::OneHundredTwenty => Some(uncertain!(0.3258, 0.0009)),
-            Self::OneHundredTwentyTwo => Some(uncertain!(0.0463, 0.0003)),
-            Self::OneHundredTwentyFour => Some(uncertain!(0.0579, 0.0005)),
+            Self::OneHundredTwelve => Some(uncertain!(0.009_7, 0.000_1)),
+            Self::OneHundredFourteen => Some(uncertain!(0.006_6, 0.000_1)),
+            Self::OneHundredFifteen => Some(uncertain!(0.003_4, 0.000_1)),
+            Self::OneHundredSixteen => Some(uncertain!(0.145_4, 0.000_9)),
+            Self::OneHundredSeventeen => Some(uncertain!(0.076_8, 0.000_7)),
+            Self::OneHundredEighteen => Some(uncertain!(0.242_2, 0.000_9)),
+            Self::OneHundredNineteen => Some(uncertain!(0.085_9, 0.000_4)),
+            Self::OneHundredTwenty => Some(uncertain!(0.325_8, 0.000_9)),
+            Self::OneHundredTwentyTwo => Some(uncertain!(0.046_3, 0.000_3)),
+            Self::OneHundredTwentyFour => Some(uncertain!(0.057_9, 0.000_5)),
         }
     }
 
@@ -1712,8 +2036,8 @@ impl Sb {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredTwentyOne => Some(uncertain!(0.5721, 0.0005)),
-            Self::OneHundredTwentyThree => Some(uncertain!(0.4279, 0.0005)),
+            Self::OneHundredTwentyOne => Some(uncertain!(0.572_1, 0.000_5)),
+            Self::OneHundredTwentyThree => Some(uncertain!(0.427_9, 0.000_5)),
         }
     }
 
@@ -1755,14 +2079,14 @@ impl Te {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredTwenty => Some(uncertain!(0.0009, 0.0001)),
-            Self::OneHundredTwentyTwo => Some(uncertain!(0.0255, 0.0012)),
-            Self::OneHundredTwentyThree => Some(uncertain!(0.0089, 0.0003)),
-            Self::OneHundredTwentyFour => Some(uncertain!(0.0474, 0.0014)),
-            Self::OneHundredTwentyFive => Some(uncertain!(0.0707, 0.0015)),
-            Self::OneHundredTwentySix => Some(uncertain!(0.1884, 0.0025)),
-            Self::OneHundredTwentyEight => Some(uncertain!(0.3174, 0.0008)),
-            Self::OneHundredThirty => Some(uncertain!(0.3408, 0.0062)),
+            Self::OneHundredTwenty => Some(uncertain!(0.000_9, 0.000_1)),
+            Self::OneHundredTwentyTwo => Some(uncertain!(0.025_5, 0.001_2)),
+            Self::OneHundredTwentyThree => Some(uncertain!(0.008_9, 0.000_3)),
+            Self::OneHundredTwentyFour => Some(uncertain!(0.047_4, 0.001_4)),
+            Self::OneHundredTwentyFive => Some(uncertain!(0.070_7, 0.001_5)),
+            Self::OneHundredTwentySix => Some(uncertain!(0.188_4, 0.002_5)),
+            Self::OneHundredTwentyEight => Some(uncertain!(0.317_4, 0.000_8)),
+            Self::OneHundredThirty => Some(uncertain!(0.340_8, 0.006_2)),
         }
     }
 
@@ -1794,6 +2118,33 @@ impl Te {
             Self::OneHundredTwentyEight => uncertain!(127.904_461_28, 0.000_000_93),
             Self::OneHundredThirty => uncertain!(129.906_222_748, 0.000_000_012),
         }
+    }
+}
+
+/// I isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum I {
+    OneHundredTwentySeven,
+}
+
+impl I {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        127
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(126.904_471_9, 0.000_003_9)
     }
 }
 
@@ -1862,6 +2213,33 @@ impl Xe {
     }
 }
 
+/// Cs isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Cs {
+    OneHundredThirtyThree,
+}
+
+impl Cs {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        133
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(132.905_451_961_0, 0.000_000_008_0)
+    }
+}
+
 /// Ba isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -1880,13 +2258,13 @@ impl Ba {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredThirty => Some(uncertain!(0.00106, 0.00001)),
-            Self::OneHundredThirtyTwo => Some(uncertain!(0.00101, 0.00001)),
-            Self::OneHundredThirtyFour => Some(uncertain!(0.02417, 0.00018)),
-            Self::OneHundredThirtyFive => Some(uncertain!(0.06592, 0.00012)),
-            Self::OneHundredThirtySix => Some(uncertain!(0.07854, 0.00024)),
-            Self::OneHundredThirtySeven => Some(uncertain!(0.11232, 0.00024)),
-            Self::OneHundredThirtyEight => Some(uncertain!(0.71698, 0.00042)),
+            Self::OneHundredThirty => Some(uncertain!(0.001_06, 0.000_01)),
+            Self::OneHundredThirtyTwo => Some(uncertain!(0.001_01, 0.000_01)),
+            Self::OneHundredThirtyFour => Some(uncertain!(0.024_17, 0.000_18)),
+            Self::OneHundredThirtyFive => Some(uncertain!(0.065_92, 0.000_12)),
+            Self::OneHundredThirtySix => Some(uncertain!(0.078_54, 0.000_24)),
+            Self::OneHundredThirtySeven => Some(uncertain!(0.112_32, 0.000_24)),
+            Self::OneHundredThirtyEight => Some(uncertain!(0.716_98, 0.000_42)),
         }
     }
 
@@ -1971,10 +2349,10 @@ impl Ce {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredThirtySix => Some(uncertain!(0.00185, 0.00002)),
-            Self::OneHundredThirtyEight => Some(uncertain!(0.00251, 0.00002)),
-            Self::OneHundredForty => Some(uncertain!(0.88450, 0.00051)),
-            Self::OneHundredFortyTwo => Some(uncertain!(0.11114, 0.00051)),
+            Self::OneHundredThirtySix => Some(uncertain!(0.001_85, 0.000_02)),
+            Self::OneHundredThirtyEight => Some(uncertain!(0.002_51, 0.000_02)),
+            Self::OneHundredForty => Some(uncertain!(0.884_50, 0.000_51)),
+            Self::OneHundredFortyTwo => Some(uncertain!(0.111_14, 0.000_51)),
         }
     }
 
@@ -2001,6 +2379,33 @@ impl Ce {
     }
 }
 
+/// Pr isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Pr {
+    OneHundredFortyOne,
+}
+
+impl Pr {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        141
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(140.907_657_6, 0.000_002_3)
+    }
+}
+
 /// Nd isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -2019,13 +2424,13 @@ impl Nd {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredFortyTwo => Some(uncertain!(0.27152, 0.00040)),
-            Self::OneHundredFortyThree => Some(uncertain!(0.12174, 0.00026)),
-            Self::OneHundredFortyFour => Some(uncertain!(0.23798, 0.00019)),
-            Self::OneHundredFortyFive => Some(uncertain!(0.08293, 0.00012)),
-            Self::OneHundredFortySix => Some(uncertain!(0.17189, 0.00032)),
-            Self::OneHundredFortyEight => Some(uncertain!(0.05756, 0.00021)),
-            Self::OneHundredFifty => Some(uncertain!(0.05638, 0.00028)),
+            Self::OneHundredFortyTwo => Some(uncertain!(0.271_52, 0.000_40)),
+            Self::OneHundredFortyThree => Some(uncertain!(0.121_74, 0.000_26)),
+            Self::OneHundredFortyFour => Some(uncertain!(0.237_98, 0.000_19)),
+            Self::OneHundredFortyFive => Some(uncertain!(0.082_93, 0.000_12)),
+            Self::OneHundredFortySix => Some(uncertain!(0.171_89, 0.000_32)),
+            Self::OneHundredFortyEight => Some(uncertain!(0.057_56, 0.000_21)),
+            Self::OneHundredFifty => Some(uncertain!(0.056_38, 0.000_28)),
         }
     }
 
@@ -2113,13 +2518,13 @@ impl Sm {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredFortyFour => Some(uncertain!(0.0307, 0.0007)),
-            Self::OneHundredFortySeven => Some(uncertain!(0.1499, 0.0018)),
-            Self::OneHundredFortyEight => Some(uncertain!(0.1124, 0.0010)),
-            Self::OneHundredFortyNine => Some(uncertain!(0.1382, 0.0007)),
-            Self::OneHundredFifty => Some(uncertain!(0.0738, 0.0001)),
-            Self::OneHundredFiftyTwo => Some(uncertain!(0.2675, 0.0016)),
-            Self::OneHundredFiftyFour => Some(uncertain!(0.2275, 0.0029)),
+            Self::OneHundredFortyFour => Some(uncertain!(0.030_7, 0.000_7)),
+            Self::OneHundredFortySeven => Some(uncertain!(0.149_9, 0.001_8)),
+            Self::OneHundredFortyEight => Some(uncertain!(0.112_4, 0.001_0)),
+            Self::OneHundredFortyNine => Some(uncertain!(0.138_2, 0.000_7)),
+            Self::OneHundredFifty => Some(uncertain!(0.073_8, 0.000_1)),
+            Self::OneHundredFiftyTwo => Some(uncertain!(0.267_5, 0.001_6)),
+            Self::OneHundredFiftyFour => Some(uncertain!(0.227_5, 0.002_9)),
         }
     }
 
@@ -2165,8 +2570,8 @@ impl Eu {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredFiftyOne => Some(uncertain!(0.4781, 0.0006)),
-            Self::OneHundredFiftyThree => Some(uncertain!(0.5219, 0.0006)),
+            Self::OneHundredFiftyOne => Some(uncertain!(0.478_1, 0.000_6)),
+            Self::OneHundredFiftyThree => Some(uncertain!(0.521_9, 0.000_6)),
         }
     }
 
@@ -2207,13 +2612,13 @@ impl Gd {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredFiftyTwo => Some(uncertain!(0.0020, 0.0001)),
-            Self::OneHundredFiftyFour => Some(uncertain!(0.0218, 0.0003)),
-            Self::OneHundredFiftyFive => Some(uncertain!(0.1480, 0.0012)),
-            Self::OneHundredFiftySix => Some(uncertain!(0.2047, 0.0009)),
-            Self::OneHundredFiftySeven => Some(uncertain!(0.1565, 0.0002)),
-            Self::OneHundredFiftyEight => Some(uncertain!(0.2484, 0.0007)),
-            Self::OneHundredSixty => Some(uncertain!(0.2186, 0.0019)),
+            Self::OneHundredFiftyTwo => Some(uncertain!(0.002_0, 0.000_1)),
+            Self::OneHundredFiftyFour => Some(uncertain!(0.021_8, 0.000_3)),
+            Self::OneHundredFiftyFive => Some(uncertain!(0.148_0, 0.001_2)),
+            Self::OneHundredFiftySix => Some(uncertain!(0.204_7, 0.000_9)),
+            Self::OneHundredFiftySeven => Some(uncertain!(0.156_5, 0.000_2)),
+            Self::OneHundredFiftyEight => Some(uncertain!(0.248_4, 0.000_7)),
+            Self::OneHundredSixty => Some(uncertain!(0.218_6, 0.001_9)),
         }
     }
 
@@ -2246,6 +2651,33 @@ impl Gd {
     }
 }
 
+/// Tb isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Tb {
+    OneHundredFiftyNine,
+}
+
+impl Tb {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        159
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(158.925_354_7, 0.000_001_9)
+    }
+}
+
 /// Dy isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -2264,13 +2696,13 @@ impl Dy {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredFiftySix => Some(uncertain!(0.00056, 0.00003)),
-            Self::OneHundredFiftyEight => Some(uncertain!(0.00095, 0.00003)),
-            Self::OneHundredSixty => Some(uncertain!(0.02329, 0.00018)),
-            Self::OneHundredSixtyOne => Some(uncertain!(0.18889, 0.00042)),
-            Self::OneHundredSixtyTwo => Some(uncertain!(0.25475, 0.00036)),
-            Self::OneHundredSixtyThree => Some(uncertain!(0.24896, 0.00042)),
-            Self::OneHundredSixtyFour => Some(uncertain!(0.28260, 0.00054)),
+            Self::OneHundredFiftySix => Some(uncertain!(0.000_56, 0.000_03)),
+            Self::OneHundredFiftyEight => Some(uncertain!(0.000_95, 0.000_03)),
+            Self::OneHundredSixty => Some(uncertain!(0.023_29, 0.000_18)),
+            Self::OneHundredSixtyOne => Some(uncertain!(0.188_89, 0.000_42)),
+            Self::OneHundredSixtyTwo => Some(uncertain!(0.254_75, 0.000_36)),
+            Self::OneHundredSixtyThree => Some(uncertain!(0.248_96, 0.000_42)),
+            Self::OneHundredSixtyFour => Some(uncertain!(0.282_60, 0.000_54)),
         }
     }
 
@@ -2303,6 +2735,33 @@ impl Dy {
     }
 }
 
+/// Ho isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Ho {
+    OneHundredSixtyFive,
+}
+
+impl Ho {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        165
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(164.930_328_8, 0.000_002_1)
+    }
+}
+
 /// Er isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -2320,12 +2779,12 @@ impl Er {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredSixtyTwo => Some(uncertain!(0.00139, 0.00005)),
-            Self::OneHundredSixtyFour => Some(uncertain!(0.01601, 0.00003)),
-            Self::OneHundredSixtySix => Some(uncertain!(0.33503, 0.00036)),
-            Self::OneHundredSixtySeven => Some(uncertain!(0.22869, 0.00009)),
-            Self::OneHundredSixtyEight => Some(uncertain!(0.26978, 0.00018)),
-            Self::OneHundredSeventy => Some(uncertain!(0.14910, 0.00036)),
+            Self::OneHundredSixtyTwo => Some(uncertain!(0.001_39, 0.000_05)),
+            Self::OneHundredSixtyFour => Some(uncertain!(0.016_01, 0.000_03)),
+            Self::OneHundredSixtySix => Some(uncertain!(0.335_03, 0.000_36)),
+            Self::OneHundredSixtySeven => Some(uncertain!(0.228_69, 0.000_09)),
+            Self::OneHundredSixtyEight => Some(uncertain!(0.269_78, 0.000_18)),
+            Self::OneHundredSeventy => Some(uncertain!(0.149_10, 0.000_36)),
         }
     }
 
@@ -2356,6 +2815,33 @@ impl Er {
     }
 }
 
+/// Tm isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Tm {
+    OneHundredSixtyNine,
+}
+
+impl Tm {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        169
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(168.934_217_9, 0.000_002_2)
+    }
+}
+
 /// Yb isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -2374,13 +2860,13 @@ impl Yb {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredSixtyEight => Some(uncertain!(0.00123, 0.00003)),
-            Self::OneHundredSeventy => Some(uncertain!(0.02982, 0.00039)),
-            Self::OneHundredSeventyOne => Some(uncertain!(0.1409, 0.0014)),
-            Self::OneHundredSeventyTwo => Some(uncertain!(0.2168, 0.0013)),
-            Self::OneHundredSeventyThree => Some(uncertain!(0.16103, 0.00063)),
-            Self::OneHundredSeventyFour => Some(uncertain!(0.32026, 0.00080)),
-            Self::OneHundredSeventySix => Some(uncertain!(0.12996, 0.00083)),
+            Self::OneHundredSixtyEight => Some(uncertain!(0.001_23, 0.000_03)),
+            Self::OneHundredSeventy => Some(uncertain!(0.029_82, 0.000_39)),
+            Self::OneHundredSeventyOne => Some(uncertain!(0.140_9, 0.001_4)),
+            Self::OneHundredSeventyTwo => Some(uncertain!(0.216_8, 0.001_3)),
+            Self::OneHundredSeventyThree => Some(uncertain!(0.161_03, 0.000_63)),
+            Self::OneHundredSeventyFour => Some(uncertain!(0.320_26, 0.000_80)),
+            Self::OneHundredSeventySix => Some(uncertain!(0.129_96, 0.000_83)),
         }
     }
 
@@ -2426,8 +2912,8 @@ impl Lu {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredSeventyFive => Some(uncertain!(0.97401, 0.00013)),
-            Self::OneHundredSeventySix => Some(uncertain!(0.02599, 0.00013)),
+            Self::OneHundredSeventyFive => Some(uncertain!(0.974_01, 0.000_13)),
+            Self::OneHundredSeventySix => Some(uncertain!(0.025_99, 0.000_13)),
         }
     }
 
@@ -2467,12 +2953,12 @@ impl Hf {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredSeventyFour => Some(uncertain!(0.0016, 0.0001)),
-            Self::OneHundredSeventySix => Some(uncertain!(0.0526, 0.0007)),
-            Self::OneHundredSeventySeven => Some(uncertain!(0.1860, 0.0009)),
-            Self::OneHundredSeventyEight => Some(uncertain!(0.2728, 0.0007)),
-            Self::OneHundredSeventyNine => Some(uncertain!(0.1362, 0.0002)),
-            Self::OneHundredEighty => Some(uncertain!(0.3508, 0.0016)),
+            Self::OneHundredSeventyFour => Some(uncertain!(0.001_6, 0.000_1)),
+            Self::OneHundredSeventySix => Some(uncertain!(0.052_6, 0.000_7)),
+            Self::OneHundredSeventySeven => Some(uncertain!(0.186_0, 0.000_9)),
+            Self::OneHundredSeventyEight => Some(uncertain!(0.272_8, 0.000_7)),
+            Self::OneHundredSeventyNine => Some(uncertain!(0.136_2, 0.000_2)),
+            Self::OneHundredEighty => Some(uncertain!(0.350_8, 0.001_6)),
         }
     }
 
@@ -2556,11 +3042,11 @@ impl W {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredEighty => Some(uncertain!(0.0012, 0.0001)),
-            Self::OneHundredEightyTwo => Some(uncertain!(0.2650, 0.0016)),
-            Self::OneHundredEightyThree => Some(uncertain!(0.1431, 0.0004)),
-            Self::OneHundredEightyFour => Some(uncertain!(0.3064, 0.0002)),
-            Self::OneHundredEightySix => Some(uncertain!(0.2843, 0.0019)),
+            Self::OneHundredEighty => Some(uncertain!(0.001_2, 0.000_1)),
+            Self::OneHundredEightyTwo => Some(uncertain!(0.265_0, 0.001_6)),
+            Self::OneHundredEightyThree => Some(uncertain!(0.143_1, 0.000_4)),
+            Self::OneHundredEightyFour => Some(uncertain!(0.306_4, 0.000_2)),
+            Self::OneHundredEightySix => Some(uncertain!(0.284_3, 0.001_9)),
         }
     }
 
@@ -2602,8 +3088,8 @@ impl Re {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredEightyFive => Some(uncertain!(0.3740, 0.0002)),
-            Self::OneHundredEightySeven => Some(uncertain!(0.6260, 0.0002)),
+            Self::OneHundredEightyFive => Some(uncertain!(0.374_0, 0.000_2)),
+            Self::OneHundredEightySeven => Some(uncertain!(0.626_0, 0.000_2)),
         }
     }
 
@@ -2644,13 +3130,13 @@ impl Os {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredEightyFour => Some(uncertain!(0.0002, 0.0001)),
-            Self::OneHundredEightySix => Some(uncertain!(0.0159, 0.0003)),
-            Self::OneHundredEightySeven => Some(uncertain!(0.0196, 0.0002)),
-            Self::OneHundredEightyEight => Some(uncertain!(0.1324, 0.0008)),
-            Self::OneHundredEightyNine => Some(uncertain!(0.1615, 0.0005)),
-            Self::OneHundredNinety => Some(uncertain!(0.2626, 0.0002)),
-            Self::OneHundredNinetyTwo => Some(uncertain!(0.4078, 0.0019)),
+            Self::OneHundredEightyFour => Some(uncertain!(0.000_2, 0.000_1)),
+            Self::OneHundredEightySix => Some(uncertain!(0.015_9, 0.000_3)),
+            Self::OneHundredEightySeven => Some(uncertain!(0.019_6, 0.000_2)),
+            Self::OneHundredEightyEight => Some(uncertain!(0.132_4, 0.000_8)),
+            Self::OneHundredEightyNine => Some(uncertain!(0.161_5, 0.000_5)),
+            Self::OneHundredNinety => Some(uncertain!(0.262_6, 0.000_2)),
+            Self::OneHundredNinetyTwo => Some(uncertain!(0.407_8, 0.001_9)),
         }
     }
 
@@ -2737,12 +3223,12 @@ impl Pt {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredNinety => Some(uncertain!(0.00012, 0.00002)),
-            Self::OneHundredNinetyTwo => Some(uncertain!(0.00782, 0.00024)),
-            Self::OneHundredNinetyFour => Some(uncertain!(0.3286, 0.0040)),
-            Self::OneHundredNinetyFive => Some(uncertain!(0.3378, 0.0024)),
-            Self::OneHundredNinetySix => Some(uncertain!(0.2521, 0.0034)),
-            Self::OneHundredNinetyEight => Some(uncertain!(0.07356, 0.00130)),
+            Self::OneHundredNinety => Some(uncertain!(0.000_12, 0.000_02)),
+            Self::OneHundredNinetyTwo => Some(uncertain!(0.007_82, 0.000_24)),
+            Self::OneHundredNinetyFour => Some(uncertain!(0.328_6, 0.004_0)),
+            Self::OneHundredNinetyFive => Some(uncertain!(0.337_8, 0.002_4)),
+            Self::OneHundredNinetySix => Some(uncertain!(0.252_1, 0.003_4)),
+            Self::OneHundredNinetyEight => Some(uncertain!(0.073_56, 0.001_30)),
         }
     }
 
@@ -2773,6 +3259,33 @@ impl Pt {
     }
 }
 
+/// Au isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Au {
+    OneHundredNinetySeven,
+}
+
+impl Au {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        197
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(196.966_568_79, 0.000_000_71)
+    }
+}
+
 /// Hg isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -2791,13 +3304,13 @@ impl Hg {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::OneHundredNinetySix => Some(uncertain!(0.0015, 0.0001)),
-            Self::OneHundredNinetyEight => Some(uncertain!(0.0997, 0.0020)),
-            Self::OneHundredNinetyNine => Some(uncertain!(0.1687, 0.0022)),
-            Self::TwoHundred => Some(uncertain!(0.2310, 0.0019)),
-            Self::TwoHundredOne => Some(uncertain!(0.1318, 0.0009)),
-            Self::TwoHundredTwo => Some(uncertain!(0.2986, 0.0026)),
-            Self::TwoHundredFour => Some(uncertain!(0.0687, 0.0015)),
+            Self::OneHundredNinetySix => Some(uncertain!(0.001_5, 0.000_1)),
+            Self::OneHundredNinetyEight => Some(uncertain!(0.099_7, 0.002_0)),
+            Self::OneHundredNinetyNine => Some(uncertain!(0.168_7, 0.002_2)),
+            Self::TwoHundred => Some(uncertain!(0.231_0, 0.001_9)),
+            Self::TwoHundredOne => Some(uncertain!(0.131_8, 0.000_9)),
+            Self::TwoHundredTwo => Some(uncertain!(0.298_6, 0.002_6)),
+            Self::TwoHundredFour => Some(uncertain!(0.068_7, 0.001_5)),
         }
     }
 
@@ -2843,8 +3356,8 @@ impl Tl {
     #[must_use]
     pub const fn isotopic_composition(&self) -> Option<Uncertain> {
         match self {
-            Self::TwoHundredThree => Some(uncertain!(0.2952, 0.0001)),
-            Self::TwoHundredFive => Some(uncertain!(0.7048, 0.0001)),
+            Self::TwoHundredThree => Some(uncertain!(0.295_2, 0.000_1)),
+            Self::TwoHundredFive => Some(uncertain!(0.704_8, 0.000_1)),
         }
     }
 
@@ -2909,6 +3422,33 @@ impl Pb {
             Self::TwoHundredSeven => uncertain!(206.975_897_3, 0.000_001_3),
             Self::TwoHundredEight => uncertain!(207.976_652_5, 0.000_001_3),
         }
+    }
+}
+
+/// Bi isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Bi {
+    TwoHundredNine,
+}
+
+impl Bi {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        209
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(208.980_399_1, 0.000_001_6)
     }
 }
 
@@ -3027,6 +3567,33 @@ impl Rn {
     }
 }
 
+/// Fr isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Fr {
+    TwoHundredTwentyThree,
+}
+
+impl Fr {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        223
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(223.019_736_0, 0.000_002_5)
+    }
+}
+
 /// Ra isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -3072,6 +3639,33 @@ impl Ra {
     }
 }
 
+/// Ac isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Ac {
+    TwoHundredTwentySeven,
+}
+
+impl Ac {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        227
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(227.027_752_3, 0.000_002_5)
+    }
+}
+
 /// Th isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -3106,6 +3700,33 @@ impl Th {
             Self::TwoHundredThirty => uncertain!(230.033_134_1, 0.000_001_9),
             Self::TwoHundredThirtyTwo => uncertain!(232.038_055_8, 0.000_002_1),
         }
+    }
+}
+
+/// Pa isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Pa {
+    TwoHundredThirtyOne,
+}
+
+impl Pa {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        Some(uncertain!(1.0))
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        231
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(231.035_884_2, 0.000_002_4)
     }
 }
 
@@ -3420,6 +4041,60 @@ impl Cf {
     }
 }
 
+/// Es isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Es {
+    TwoHundredFiftyTwo,
+}
+
+impl Es {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        252
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(252.082_980, 0.000_054)
+    }
+}
+
+/// Fm isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Fm {
+    TwoHundredFiftySeven,
+}
+
+impl Fm {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        257
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(257.095_106_1, 0.000_006_9)
+    }
+}
+
 /// Md isotopes
 #[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -3452,7 +4127,466 @@ impl Md {
     pub const fn relative_atomic_mass(&self) -> Uncertain {
         match self {
             Self::TwoHundredFiftyEight => uncertain!(258.098_431_5, 0.000_005_0),
-            Self::TwoHundredSixty => uncertain!(260.10365, 0.00034),
+            Self::TwoHundredSixty => uncertain!(260.103_65, 0.000_34),
         }
+    }
+}
+
+/// No isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum No {
+    TwoHundredFiftyNine,
+}
+
+impl No {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        259
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(259.101_03, 0.000_11)
+    }
+}
+
+/// Lr isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Lr {
+    TwoHundredSixtyTwo,
+}
+
+impl Lr {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        262
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(262.109_61, 0.000_22)
+    }
+}
+
+/// Rf isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Rf {
+    TwoHundredSixtySeven,
+}
+
+impl Rf {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        267
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(267.121_79, 0.000_62)
+    }
+}
+
+/// Db isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Db {
+    TwoHundredSixtyEight,
+}
+
+impl Db {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        268
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(268.125_67, 0.000_57)
+    }
+}
+
+/// Sg isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Sg {
+    TwoHundredSeventyOne,
+}
+
+impl Sg {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        271
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(271.133_93, 0.000_63)
+    }
+}
+
+/// Bh isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Bh {
+    TwoHundredSeventyTwo,
+}
+
+impl Bh {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        272
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(272.138_26, 0.000_58)
+    }
+}
+
+/// Hs isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Hs {
+    TwoHundredSeventy,
+}
+
+impl Hs {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        270
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(270.134_29, 0.000_27)
+    }
+}
+
+/// Mt isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Mt {
+    TwoHundredSeventySix,
+}
+
+impl Mt {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        276
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(276.151_59, 0.000_59)
+    }
+}
+
+/// Ds isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Ds {
+    TwoHundredEightyOne,
+}
+
+impl Ds {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        281
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(281.164_51, 0.000_59)
+    }
+}
+
+/// Rg isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Rg {
+    TwoHundredEighty,
+}
+
+impl Rg {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        280
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(280.165_14, 0.000_61)
+    }
+}
+
+/// Cn isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Cn {
+    TwoHundredEightyFive,
+}
+
+impl Cn {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        285
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(285.177_12, 0.000_60)
+    }
+}
+
+/// Nh isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Nh {
+    TwoHundredEightyFour,
+}
+
+impl Nh {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        284
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(284.178_73, 0.000_62)
+    }
+}
+
+/// Fl isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Fl {
+    TwoHundredEightyNine,
+}
+
+impl Fl {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        289
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(289.190_42, 0.000_60)
+    }
+}
+
+/// Mc isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Mc {
+    TwoHundredEightyEight,
+}
+
+impl Mc {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        288
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(288.192_74, 0.000_62)
+    }
+}
+
+/// Lv isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Lv {
+    TwoHundredNinetyThree,
+}
+
+impl Lv {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        293
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(293.204_49, 0.000_60)
+    }
+}
+
+/// Ts isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Ts {
+    TwoHundredNinetyTwo,
+}
+
+impl Ts {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        292
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(292.207_46, 0.000_75)
+    }
+}
+
+/// Og isotope
+#[derive(Clone, Copy, Debug, EnumIter, Eq, Hash, Ord, PartialEq, PartialOrd)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+pub enum Og {
+    TwoHundredNinetyFour,
+}
+
+impl Og {
+    /// Isotopic composition
+    #[must_use]
+    pub const fn isotopic_composition(&self) -> Option<Uncertain> {
+        None
+    }
+
+    /// Mass number
+    #[must_use]
+    pub const fn mass_number(&self) -> usize {
+        294
+    }
+
+    /// Relative atomic mass
+    #[must_use]
+    pub const fn relative_atomic_mass(&self) -> Uncertain {
+        uncertain!(294.213_92, 0.000_71)
     }
 }
